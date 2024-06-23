@@ -1,5 +1,5 @@
 ---
-title: "Astro Nano"
+title: "From Borneo"
 description: "Minimal portfolio and blog build with astro and no frameworks."
 date: "2024-03-26"
 demoURL: "https://astro-nano-demo.vercel.app"
