@@ -19,11 +19,12 @@ const { title, description } = Astro.props;
     <Head title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-    <PageFind />
+    <div id="notebook-paper">
+  `    <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />`
+    </div>
   </body>
 </html>
