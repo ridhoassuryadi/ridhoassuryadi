@@ -4,6 +4,7 @@ import Container from "@components/Container.astro";
 import { SITE, HOME, SOCIALS } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
+import ProfileStickyNote from "@components/ProfileStickyNote.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -22,10 +23,8 @@ const projects: CollectionEntry<"projects">[] = (
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h1 class="animate font-semibold text-black dark:text-white">
-      Hello, I'm Ridho!
-    </h1>
-    <div class="space-y-16">
+    <ProfileStickyNote />
+    <div class="mt-14">
       <section>
         <article class="space-y-4">
           <span class="animate">
@@ -54,15 +53,15 @@ const projects: CollectionEntry<"projects">[] = (
         </article>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap items-center justify-between gap-y-2">
+      <section class="animate mt-8 mb-10">
+        <div class="flex flex-wrap items-center justify-between gap-y-2 mb-4">
           <h2 class="font-semibold text-black dark:text-white">Latest posts</h2>
           <Link href="/blog"> See all posts </Link>
         </div>
         <ul class="not-prose flex flex-col gap-4">
           {
             blog.map((post) => (
-              <li class="hd-border">
+              <li class="hd-border bg-white">
                 <ArrowCard entry={post} />
               </li>
             ))
@@ -70,8 +69,8 @@ const projects: CollectionEntry<"projects">[] = (
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap items-center justify-between gap-y-2">
+      <section class="animate mt-8 mb-16">
+        <div class="flex flex-wrap items-center justify-between gap-y-2 mb-4">
           <h2 class="font-semibold text-black dark:text-white">
             Recent projects
           </h2>
@@ -80,7 +79,7 @@ const projects: CollectionEntry<"projects">[] = (
         <ul class="not-prose flex flex-col gap-4">
           {
             projects.map((project) => (
-              <li class="hd-border">
+              <li class="hd-border bg-white">
                 <ArrowCard entry={project} />
               </li>
             ))
@@ -88,7 +87,7 @@ const projects: CollectionEntry<"projects">[] = (
         </ul>
       </section>
 
-      <section class="animate space-y-4">
+      <section class="animate mt-14">
         <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
         <article>
           <p>
