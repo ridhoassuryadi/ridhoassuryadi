@@ -62,7 +62,7 @@ const projects: CollectionEntry<"projects">[] = (
         <ul class="not-prose flex flex-col gap-4">
           {
             blog.map((post) => (
-              <li>
+              <li class="hd-border">
                 <ArrowCard entry={post} />
               </li>
             ))
@@ -80,7 +80,7 @@ const projects: CollectionEntry<"projects">[] = (
         <ul class="not-prose flex flex-col gap-4">
           {
             projects.map((project) => (
-              <li>
+              <li class="hd-border">
                 <ArrowCard entry={project} />
               </li>
             ))

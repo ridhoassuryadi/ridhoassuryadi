@@ -4,6 +4,9 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE } from "@consts";
 
+
+
+
 type Props = {
   title: string;
   description: string;
@@ -26,4 +29,5 @@ const { title, description } = Astro.props;
       <Footer />`
     </div>
   </body>
+   <script is:inline type="module" src="https://unpkg.com/wired-elements?module"></script>
 </html>
