@@ -23,7 +23,7 @@ body {
   @apply bg-neutral-100 dark:bg-neutral-900;
   @apply text-black/75 dark:text-white/75;
   font-family: "Pangolin", cursive;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -132,7 +132,7 @@ pre {
 #notebook-paper {
   width: 100%;
   max-width:980px;
-  background: linear-gradient(to bottom,white 31px,#00b0d7 1px);
+  background: linear-gradient(to bottom,white 31px,#00b0d763 1px);
   margin:0 auto;
   background-size: 100% 32px;
   position:relative;
@@ -204,4 +204,75 @@ pre {
 article :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   margin-top: 2em;
   margin-bottom: 0;
+}
+
+.frame {
+  position: relative;
+  margin-top: 60px;
+  background-color: #ffffff;
+  min-width: 180px;
+  width: 100%;
+  max-width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tape {
+  background-color: #dbd8be;
+  position: absolute;
+    height: 4vmin;
+    top: -2rem;
+    width: 80%;
+    background-color: #dbd8be;
+    border-right: 1px dotted #b7b49d;
+    border-left: 1px dotted #b7b49d;
+    opacity: 0.5;
+}
+.tape:after,
+.tape:before {
+  background-size: 0.4em 0.4em;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0.2em;
+}
+.tape:after {
+  background-image: linear-gradient(45deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%), linear-gradient(-45deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%);
+  background-position: 0 100%;
+  left: -0.2em;
+}
+.tape:before {
+  background-image: linear-gradient(135deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%), linear-gradient(-135deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%);
+  background-position: 100% 100%;
+  right: -0.2em;
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height:280px;
+}
+.img-wrapper img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%
+}
+
+details {
+  border: 2px solid #919090;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
