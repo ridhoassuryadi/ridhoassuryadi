@@ -2,7 +2,6 @@
 import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import PageFind from "@components/PageFind.astro";
 import { SITE } from "@consts";
 
 type Props = {
@@ -19,11 +18,12 @@ const { title, description } = Astro.props;
     <Head title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-    <PageFind />
+    <div id="notebook-paper">
+  `    <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />`
+    </div>
   </body>
 </html>
