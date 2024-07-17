@@ -22,7 +22,11 @@ body {
   @apply flex flex-col;
   @apply bg-neutral-100 dark:bg-neutral-900;
   @apply text-black/75 dark:text-white/75;
+  font-family: "Pangolin", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 header {
   @apply fixed left-0 right-0 top-0 z-50 py-6;
@@ -31,11 +35,17 @@ header {
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1;
+  padding-top: 1.6rem;
+  padding-bottom: 8rem;
 }
 
 footer {
   @apply py-6 text-sm;
+}
+
+p {
+    line-height: 2rem;
 }
 
 article {
@@ -126,7 +136,7 @@ pre {
   margin:0 auto;
   background-size: 100% 32px;
   position:relative;
-  padding-top:150px;
+  padding-top:3.4rem;
   padding-left:44px;
   padding-right:12px;
   border-radius:5px;
@@ -147,7 +157,6 @@ pre {
     background:#db4034;
   }
   header {
-    height:150px;
     width:100%;
     background:white;
     position:absolute;
@@ -180,7 +189,6 @@ pre {
          }
 
          header {
-            height:11rem;
              h1 {
                  @apply text-5xl;
                  padding:9rem 2rem 0 10.75rem;
@@ -191,4 +199,9 @@ pre {
              margin-top: 3.125rem;
          }
     }
+}
+
+article :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 0;
 }
