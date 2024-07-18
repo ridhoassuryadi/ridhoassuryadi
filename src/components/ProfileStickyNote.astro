@@ -1,7 +1,11 @@
+---
+import myImage from '../assets/profile-pic.png'
+import { Image } from 'astro:assets';
+---
 <div class="frame mb-8">
     <div class="tape"></div>
     <figure class="img-wrapper">
-    <img src="https://pbs.twimg.com/media/Eq67vx3VgAAA2PM.jpg" alt="our campaign" />
+    <Image src={myImage} alt="profile pic" />
     </figure>
-    <h3 class="text-2xl mt-2 font-semibold">This is a header for the note</h3>
+    <h3 class="text-2xl mt-2 font-semibold">Hello there !</h3>
   </div>
