@@ -33,7 +33,7 @@ header {
 
 main {
   @apply flex-1;
-  padding-top: 1.6rem;
+  padding-top: 3.6rem;
   padding-bottom: 8rem;
 }
 
@@ -151,12 +151,19 @@ pre {
     width:1px;
     background:#db4034;
   }
+
   header {
     width:100%;
     background:white;
     position:absolute;
     top:0;
     left:0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #db4034;
+
     h1 {
       @apply text-4xl font-semibold;
       padding:7.2rem 2rem 0 2.75rem;
@@ -184,6 +191,8 @@ pre {
          }
 
          header {
+          padding-left: 8rem;
+
              h1 {
                  @apply text-5xl;
                  padding:9rem 2rem 0 10.75rem;
@@ -222,7 +231,7 @@ article :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
 .tape {
   background-color: #dbd8be;
   position: absolute;
-    height: 4vmin;
+    height: 2.8rem;
     top: -2rem;
     width: 80%;
     background-color: #dbd8be;
@@ -270,4 +279,16 @@ article :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
 details {
   border: 2px solid #919090;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.group.menu-open .group-\[\.menu-open\]\:flex {
+  background: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#toggle-navigation-menu {
+  background-color: transparent;
+  border-width: 0;
+  color: var(--tw-prose-body);
 }
