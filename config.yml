@@ -94,7 +94,7 @@ apps:
   - type: email
     id: contact
     name: Contact Me
-    email: paul@koeck.dev
+    email: ulunmuhammadridho@gmail.com
     subject: Contact request from Portfolio
     window:
       width: 400
@@ -103,7 +103,7 @@ apps:
       subject: false
     placeholders:
       body: |-
-        Hi Paul,
+        Hi Ridho,
         ...
 
   - id: template
@@ -1055,7 +1055,7 @@ apps:
 
           ## Your Rights
 
-          You have the right to access, rectify, or erase any personal information we hold about you. If you would like to exercise these rights, please contact us at [paul@koeck.dev](mailto:paul@koeck.dev).
+          You have the right to access, rectify, or erase any personal information we hold about you. If you would like to exercise these rights, please contact us at [ulunmuhammadridho@gmail.com](mailto:ulunmuhammadridho@gmail.com).
 
           ## Changes to This Privacy Policy
 
@@ -1069,4 +1069,4 @@ apps:
 
           ## Contact Us
 
-          If you have any questions about this Privacy Policy, please contact us at [paul@koeck.dev](mailto:paul@koeck.dev).
+          If you have any questions about this Privacy Policy, please contact us at [ulunmuhammadridho@gmail.com](mailto:ulunmuhammadridho@gmail.com).
