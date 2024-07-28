@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-color: 60, 56, 54;
+  --main-color: 104, 175, 106;
+  --shadow-color: 0, 0, 0;
+  --wallpaper-color: 230, 230, 230;
+  --background-color: 255, 255, 255;
+}
+
+.dark {
+  --text-color: 235, 219, 178;
+  --main-color: 215, 153, 33;
+  --shadow-color: 0, 0, 0;
+  --wallpaper-color: 25, 25, 25;
+  --background-color: 40, 40, 40;
+}
+
+@layer base {
+  body {
+    @apply overflow-hidden bg-background text-text;
+  }
+
+  a {
+    @apply text-main;
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply rounded-md border-gray-700 px-4 py-3 text-text text-text shadow-sm placeholder:text-text/50 focus:border-main focus:caret-main focus:ring-main;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply rounded border-gray-300 text-main focus:ring-main;
+  }
+
+  [type="submit"] {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .btn-icon {
+    @apply h-10 w-10 min-w-[2.5rem] cursor-pointer rounded-md border-none p-2 text-text/40 outline-none transition-all hover:bg-text/5 hover:text-text/60;
+  }
+
+  .btn-icon svg {
+    @apply select-none;
+  }
+
+  .btn-icon-gray {
+    @apply btn-icon h-14 w-14 bg-text/5 p-4 focus:bg-text/10;
+  }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  border: 6px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  border: 6px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}

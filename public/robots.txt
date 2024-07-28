@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://paul.koeck.dev
+
+# Sitemaps
+Sitemap: https://paul.koeck.dev/sitemap.xml
