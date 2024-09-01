@@ -11,7 +11,6 @@ import { BoundingBox, Point, rectangleIntersection } from "@/applications/math";
 import { Chain, Node } from "@/data/Chain";
 import { constructPath, isUniqueFile } from "./util";
 import { notesConfig } from "@/applications/Notes/Notes";
-import { doomConfig } from "@/applications/Doom/Doom";
 import { imageViewerConfig } from "@/applications/ImageViewer/ImageViewer";
 import { contactConfig } from "@/applications/Contract/Contact";
 import { IconHeight, IconWidth } from "@/components/Icons/FolderIcon";
@@ -295,7 +294,6 @@ export function createBaseFileSystem(): FileSystem {
   fileSystem.addApplication(notesConfig);
   fileSystem.addApplication(terminalConfig);
   const algoViz = fileSystem.addApplication(algorithmVisualizerConfig);
-  const doom = fileSystem.addApplication(doomConfig);
   fileSystem.addApplication(imageViewerConfig);
   fileSystem.addApplication(skillsConfig);
 
@@ -313,10 +311,6 @@ export function createBaseFileSystem(): FileSystem {
 
   fileSystem.addHyperLink(desktop, applications, 'Applications', applicationFolderIcon, true);
 
-  if (doom.ok) {
-    const doomShortcutIcon = { src: '/icons/doom-icon.png', alt: 'Play Doom' };
-    fileSystem.addHyperLink(desktop, doom.value, 'Doom', doomShortcutIcon, true);
-  }
 
   if (algoViz.ok) {
     const algoVizShortcutIcon = { src: '/icons/algorithm-visualizer-icon.png', alt: 'Start Algorithm Visualizer' };
