@@ -1,19 +1,9 @@
-import "@styles/globals.css";
-import type { AppProps } from "next/app";
-import { Inter } from "next/font/google";
-import { MotionConfig } from "framer-motion";
+import '@/styles/globals.css'
+import { appWithTranslation } from 'next-i18next';
+import type { AppProps } from 'next/app'
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <MotionConfig reducedMotion="user">
-      <main className={`${inter.variable} font-sans`}>
-        <Component {...pageProps} />
-      </main>
-    </MotionConfig>
-  );
+const App = ({ Component, pageProps }: AppProps) => {
+  return <Component {...pageProps} />
 }
+
+export default appWithTranslation(App);
