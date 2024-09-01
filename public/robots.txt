@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://ridhoassuryadi.com
-
-# Sitemaps
-Sitemap: https://ridhoassuryadi.com/sitemap.xml
