@@ -1,9 +1,0 @@
-POST http://localhost:3001/api/contact/
-Content-Type: application/json
-
-{
-    "name": "M. Ridho Assuryadi",
-    "email": "ulunmuhammadridho@gmail.com",
-    "company": "Raizora Inc.",
-    "message": "foobar123"
-}
