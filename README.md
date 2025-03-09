@@ -9,7 +9,7 @@
 
 Hi, I'm Ridho! 👋
 
-A **Designer** with **Engineering** expertise and an **Entrepreneurial spirit**, I'm always eager to explore new concepts and challenge conventional thinking. My professional life revolves around spearheading business strategy and development at [Raizora](https://raizora.com), while also guiding frontend development at [Red Ant Colony](https://redantcolony.com). My free time revolves around books, culinary adventures, strategic board games, or meaningful connections with cherished companions.
+A **Engineer** with **Design** expertise and an **Entrepreneurial spirit**, I'm always eager to explore new concepts and challenge conventional thinking. My professional life revolves around spearheading business strategy and development at [Raizora](https://raizora.com), while also guiding frontend development at [Red Ant Colony](https://redantcolony.com). My free time revolves around books, culinary adventures, strategic board games, or meaningful connections with cherished companions.
 
 Others:
 <details>
