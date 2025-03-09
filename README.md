@@ -1,15 +1,20 @@
-#Hello
+<p align="center">
+  <samp>
+    <a href="https://ridhoassuryadi.com">me</a> .
+    <a href="https://instagram.com/ridhoassuryadi">instagram</a> .
+    <a href="https://www.linkedin.com/in/m-ridho/">linkedin</a>
+  </samp>
+</p>
 
 
-$$
-\begin{aligned}
-\text{For } u = f(x), v = g(x) \\
-\frac{d}{dx}(u \pm v) &= \frac{du}{dx} \pm \frac{dv}{dx} && \text{Sum/Difference Rule} \\
-\frac{d}{dx}(u \cdot v) &= \frac{du}{dx} \cdot v + u \cdot \frac{dv}{dx} && \text{Product Rule} \\
-\frac{d}{dx}\left(\frac{u}{v}\right) &= \frac{\frac{du}{dx} \cdot v - u \cdot \frac{dv}{dx}}{v^2} && \text{Quotient Rule}, v \ne 0
-\end{aligned}
-$$
+Hi, I'm Ridho! 👋
 
+A **Designer** with **Engineering** expertise and an **Entrepreneurial spirit**, I'm always eager to explore new concepts and challenge conventional thinking. My professional life revolves around spearheading business strategy and development at [Raizora](https://raizora.com), while also guiding frontend development at [Red Ant Colony](https://redantcolony.com). My free time revolves around books, culinary adventures, strategic board games, or meaningful connections with cherished companions.
+
+Others:
+<details>
+  <summary><i>My Mind Map</i></summary>
+  
 ```mermaid
 flowchart TD
 intro([Start])
@@ -42,3 +47,18 @@ s2-->ending
 s4-->ending
 s7-->ending
 ```
+
+</details>
+<details>
+  <summary><i>My Random Thang</i></summary>
+  $$
+\begin{aligned}
+\text{For } u = f(x), v = g(x) \\
+\frac{d}{dx}(u \pm v) &= \frac{du}{dx} \pm \frac{dv}{dx} && \text{Sum/Difference Rule} \\
+\frac{d}{dx}(u \cdot v) &= \frac{du}{dx} \cdot v + u \cdot \frac{dv}{dx} && \text{Product Rule} \\
+\frac{d}{dx}\left(\frac{u}{v}\right) &= \frac{\frac{du}{dx} \cdot v - u \cdot \frac{dv}{dx}}{v^2} && \text{Quotient Rule}, v \ne 0
+\end{aligned}
+$$
+</details>
+
+
