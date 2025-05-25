@@ -1,0 +1,1074 @@
+pirsch:
+  enabled: true
+  code: I1m0KYL5DgMrDdCUkoDLPxsHyENR0QkE
+
+seo:
+  url: https://paul.koeck.dev
+  title:
+    default: Paul Koeck | Web & App Developer
+    suffix: "| Paul Koeck"
+  description:
+    My name is Paul Koeck, a passionate Fullstack Web & App Developer from
+    Austria. I specialize in creating engaging digital experiences that blend innovative
+    design with powerful technology. Discover my work and how I can bring your ideas
+    to life.
+  keywords: portfolio,developer,apps,web,websites,full-stack,javascript,react,typescript
+  routes:
+    - path: /about
+      title: About Me
+      description: Here's a brief journey through my coding adventure and the milestones along the way.
+      id: about
+    - path: /projects
+      title: Projects
+      description: Navigate through our curated portfolio of projects, where creativity meets technology. Each project showcases our commitment to excellence, innovation, and the pursuit of creating memorable digital experiences.
+      id: projects
+    - path: /socials
+      title: Socials
+      description: Let's connect! Explore my social media profiles to get a glimpse into my projects, passions, and professional journey. Follow me for inspiration, tips, and much more.
+      id: socials
+    - path: /contact
+      title: Contact
+      description: Connect with me today to explore innovative collaborations or simply to share your thoughts. Let's make something great together!
+      id: contact
+
+user:
+  name: Paul Koeck
+  description: Fullstack Web & App Developer
+  avatar: /user/avatar.png
+
+notifications:
+  - id: welcome
+    icon: /notifications/wave.png
+    title: Welcome to my Portfolio!
+    description: Want to read the my story?
+    click: about
+  - id: template
+    icon: /icons/portfolio.svg
+    title: Interested in this template?
+    description: You can purchase it here!
+    click: template
+
+apps:
+  - type: markdown
+    id: about
+    name: My Story
+    window:
+      fullscreen: true
+    content: |-
+      # My Story
+
+      Hi! 👋 My name is Paul Koeck and I am a young full-stack web & app developer from Austria. Here's a brief journey through my coding adventure and the milestones along the way.
+
+      ## The Spark of Interest
+
+      When I was just 12 years old, my brother [Simon Koeck](https://simon.koeck.dev) introduced me to the world of coding at the [Code Base Camp](https://www.code-base.at/!). There, I wrote my first line of code, delving into HTML & CSS. Although I took a brief hiatus from coding to immerse myself in video games, one game, [Welcome to the Game II](https://store.steampowered.com/app/720250/Welcome_to_the_Game_II/!), reignited my passion. Inspired by its hacking theme, I decided to create a similar game. My dedication led me to complete the project during a [Ludum Dare Game Jam](https://ldjam.com/events/ludum-dare/46/cr4ck-launcher!), despite the steep learning curve with C# and Unity.
+
+      [![Crack Launcher](/screenshots/crack.png)](#crack)
+
+      ## From Games to Apps
+
+      My journey didn't stop at game development. The next venture was [Frags](#frags), a mobile app designed to extend keyboard functionality through custom macro keys. Transitioning from Unity to Dart and Flutter, I dedicated countless hours to this project. The app's popularity soared unexpectedly, thanks to a feature by [Cinecom](https://www.youtube.com/watch?v=P4ySShjYdeQ!) on YouTube, leading to over **15,000 downloads**.
+
+      [![Frags](/screenshots/frags.png)](#frags)
+
+      ## Diving into Freelancing
+
+      Encouraged by my initial projects, I ventured into freelancing on [Fiverr](https://www.fiverr.com/paulkoeck) in 2021. My first client was [TraderEdge](#traderedge), marking my deep dive into web development. Although we planned to launch [FoxFunding](#foxfunding-archive), the success of TraderEdge shifted our focus, and FoxFunding was archived [here](#foxfunding-archive). Around this time, I also embarked on creating a desktop app for [Live! Casino Hotel Maryland](https://maryland.livecasinohotel.com/!), which turned into a series of seven successful desktop app projects for the casino.
+
+      [![Böller Architektur](/screenshots/boeller.png)](#boeller)
+
+      ## Expanding My Horizon
+
+      Between 2021 and 2022, I undertook numerous freelance projects, maintaining an average of 4.9 stars over 16 reviews on Fiverr. My last freelance project was [Spaceping](#spaceping), a testament to my growing expertise and creativity in app development.
+
+      [![Spaceping](/screenshots/spaceping.png)](#spaceping)
+
+      ## Personal Projects
+
+      My journey didn't stop with freelance work. I've since launched significant personal projects like [Remark](#remark), [KeyTap](#keytap), and [Refery](#refery), alongside smaller side projects which you can find in the [projects folder](#projects).
+
+      [![Refery](/screenshots/refery.png)](#refery)
+
+      [![KeyTap](/screenshots/keytap.png)](#keytap)
+
+      [![Remark](/screenshots/remark.png)](#remark)
+
+  - type: email
+    id: contact
+    name: Contact Me
+    email: paul@koeck.dev
+    subject: Contact request from Portfolio
+    window:
+      width: 400
+      height: 520
+    fields:
+      subject: false
+    placeholders:
+      body: |-
+        Hi Paul,
+        ...
+
+  - id: template
+    type: link
+    url: https://poeck.gumroad.com/l/portfolio-os
+    name: Template
+    icon: /icons/portfolio.svg
+
+  - type: folder
+    id: projects
+    name: Projects
+    list: true
+    window:
+      width: 800
+      height: 600
+    columns:
+      - name: Name
+      - start: Start
+      - platform: Platform
+      - description: Description
+        mobile: false
+    apps:
+      - type: folder
+        id: jokedial
+        name: JokeDial
+        icon: /icons/jokedial.svg
+        start: 2024
+        platform: Web
+        description: Prank Calls, powered by AI
+        apps:
+          - type: link
+            id: jokedial-web
+            icon: /icons/jokedial.svg
+            url: https://jokedial.com/?ref=paul.koeck.dev
+            name: Website
+      - type: folder
+        id: refery
+        name: Refery
+        icon: /icons/refery.svg
+        start: 2023
+        platform: Mobile
+        description: Find Ads, Share Links, Earn Money
+        apps:
+          - type: image
+            path: /screenshots/refery.png
+            name: Screenshot
+          - type: folder
+            name: Screenshots
+            apps:
+              - type: image
+                name: Find Ads
+                path: /screenshots/refery/find.png
+              - type: image
+                name: Share Links
+                path: /screenshots/refery/share.png
+              - type: image
+                name: Earn Money
+                path: /screenshots/refery/earn.png
+              - type: image
+                name: Refery Hub
+                path: /screenshots/refery/hub.png
+          - type: link
+            id: refery-web
+            icon: /icons/refery.svg
+            url: https://www.refery.net
+            name: Website
+          - type: link
+            url: https://play.google.com/store/apps/details?id=net.refery
+            name: Play Store
+            external: true
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              I once read an insightful piece that highlighted how people are 90% more likely to purchase a product or service if it comes recommended by a friend. This statistic sparked an innovative idea in my mind, leading to the creation of "Refery." The concept was simple yet revolutionary: Why not reward individuals for sharing advertisements?
+
+              ## Existing Strategies
+
+              The realm of marketing has long been familiar with influencer, affiliate, and referral marketing strategies. However, Refery was set to stand apart from these traditional approaches.
+
+              ### Influencer Marketing
+
+              Influencer Marketing capitalizes on the trust we place in our idols. Nonetheless, it predominantly targets celebrities or individuals with massive followings, overlooking the average person. But whom do we trust more than anyone? Precisely, our friends and family. This is where Refery bridges the gap, making every individual a potential influencer within their own circle.
+
+              ### Affiliate Marketing
+
+              Affiliate Marketing, on the other hand, demands considerable effort from affiliates. It often involves setting up intricate online stores and reselling products, resembling more of a side hustle. Refery simplifies this process, requiring just a few clicks to share and earn, eliminating the need for extensive setups.
+
+              ### Referral Marketing
+
+              Referral Marketing comes closest to the essence of Refery, thus inspiring its name. However, traditional referral programs typically offer rewards such as discounts, platform credits, or free subscriptions rather than real money. Additionally, these campaigns are confined to the company's existing customer base, limiting their reach. Refery innovates by offering real monetary rewards and opening up the campaigns to a broader audience.
+
+              ### Commissions
+
+              One significant advantage for companies partnering with Refery is the versatility in commission offerings. Unlike traditional models restricted to purchase-based commissions, Refery allows for commissions on a wide array of actions, including downloads, survey completions, sign-ups, and more.
+
+              ## Result
+
+              Motivated by this idea, I dedicated over 400 hours across approximately six months to develop Refery. The project has since grown into a substantial codebase, amassing over 30,000 lines of code. It stands as one of my most significant and challenging projects to date, embodying a unique blend of innovation, simplicity, and inclusivity in the digital marketing landscape.
+
+      - type: folder
+        id: keytap
+        name: KeyTap
+        icon: /icons/keytap.svg
+        start: 2022
+        platform: Web
+        description: Learn & Train Keyboard Shortcuts
+        apps:
+          - type: image
+            path: /screenshots/keytap.png
+            name: Screenshot
+          - type: link
+            url: https://www.keytap.app
+            name: Website
+          - type: link
+            url: https://www.keytap.app/download
+            name: Download
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## The Spark of Innovation
+
+              I've always been deeply passionate about boosting productivity and enhancing the speed of my work. This drive led me to switch from Visual Studio Code to Vim a few years ago. Vim, known for its plethora of keyboard shortcuts, was an eye-opener for me. I marveled at how these shortcuts could significantly streamline my workflow, making me a staunch advocate for Vim. The only drawback? The steep learning curve associated with mastering these shortcuts, which I found frustratingly time-consuming.
+
+              ## The Birth of KeyTap
+
+              It was this blend of admiration and frustration that sparked the idea for **KeyTap**. I envisioned KeyTap as an interactive tool to demystify the world of keyboard shortcuts, making them accessible and easier to learn for everyone. Driven by this vision, I dedicated approximately six months to coding KeyTap from the ground up.
+
+              ## Achievements and Milestones
+
+              After countless hours of coding, KeyTap evolved into a comprehensive platform boasting over 15,000 lines of code. It now supports 21 different applications, encompasses 199 meticulously crafted lessons, and introduces users to over 3,000 keyboard shortcuts. Our proudest achievement to date? Teaching our users a staggering 3,200 shortcuts, empowering them to work more efficiently and effectively.
+
+              ## Looking Forward
+
+              KeyTap's journey from a simple idea to a robust platform is a testament to the power of innovation and perseverance. As we continue to expand our lessons and support for more applications, our mission remains the same: to make productivity tools like keyboard shortcuts universally accessible and easy to master. Join us on this journey to unlock your full potential and transform the way you work.
+
+      - type: folder
+        id: remark
+        name: Remark
+        icon: /icons/remark.svg
+        start: 2021
+        platform: Extension
+        description: Uncensored Comments, anywhere
+        apps:
+          - type: image
+            path: /screenshots/remark.png
+            name: Screenshot
+          - type: link
+            url: https://www.remark.surf
+            icon: /icons/remark.svg
+            name: Website
+          - type: link
+            url: https://github.com/simplifylabs/remark
+            name: GitHub
+            icon: /icons/github.svg
+            external: true
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              Once, after sharing my thoughts under a YouTube video, I encountered a challenging situation. The channel owner, holding a different opinion, decided to delete my comments. Persistent attempts to repost were futile; my comments were consistently removed, and some of my words even ended up on the channel's comment filter blacklist.
+
+              Frustrated by this restriction on free speech, I was compelled to find a solution. It dawned on me that a browser extension could elegantly address this issue by creating an independent comment system. This system would store comments in a separate database, inaccessible even to website owners. But as I delved deeper, I realized the benefits extended far beyond just uncensored speech.
+
+              ## Uncensored
+
+              The cornerstone of Remark is its commitment to free speech. Comments posted using Remark remain untouched, unless they violate our terms of service by being racist or similarly offensive. This foundational principle ensures that everyone's voice can be heard.
+
+              ## Better
+
+              Remark isn't just about uncensoring; it enhances the commenting experience. With features like replies, mentions, upvotes, and downvotes, it brings a rich, interactive dynamic to online discussions. Our voting system ensures that the most valuable comments rise to the top, fostering a community-driven approach to content curation.
+
+              ## Anywhere
+
+              Remark redefines the boundaries of commenting. It empowers users to leave comments on any site, regardless of whether it has its own comment system. This universal capability, paired with the convenience of a single account for all interactions, opens new avenues for online engagement.
+
+
+              ## Results
+
+              Remark has grown to over 10,000 lines of code, becoming one of my most cherished projects. It supports nearly all common browsers, embodying my vision of a more open and interactive internet.
+
+              This journey from a frustrating encounter on YouTube to the creation of Remark underscores my dedication to free speech and innovation. It's a testament to the power of technology in overcoming barriers and bringing people together, one comment at a time.
+
+      - type: folder
+        id: portfolio
+        name: PortfolioOS
+        icon: /icons/portfolio.svg
+        start: 2024
+        platform: Website
+        description: The site you're currently looking at
+        apps:
+          - type: link
+            url: https://poeck.gumroad.com/l/portfolio-os
+            name: Template
+            icon: /icons/portfolio.svg
+          - type: link
+            url: https://paul.koeck.dev
+            icon: /icons/portfolio.svg
+            name: Website
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## The Beginning
+              Like every other developer out there, I needed a portfolio website. I first had the idea of making my portfolio in the style of a Terminal, which I then also did. The concept was simple yet intriguing, providing a unique experience for anyone visiting my site. You can go check it out [here](#terminal) if you're interested. After launching, I received pretty good feedback from a few people. Having the site online for around a year gave me a lot of insights and experiences.
+
+              ## Seeking Innovation
+              However, as time passed, the desire for innovation grew within me. I yearned for something new, something that would not only capture the essence of my initial idea but expand it into an even more immersive experience. That's when the idea struck me - why not create not just a "fake" terminal but an entire operating system? The thought was ambitious, and I knew it would be a challenge unlike any I had faced before.
+
+              I embarked on this ambitious project, which I named PortfolioOS, about two years ago. It was a venture into uncharted territory, an attempt to blend the boundaries between a portfolio and an interactive user experience. However, life and other projects demanded my attention, and I reluctantly had to pause the development of PortfolioOS.
+
+              ## A New Dawn
+              Fast forward to 2024, a year of new beginnings and renewed determination. I finally took up the project again, pouring my passion and creativity into making PortfolioOS not just a reality, but an experience that would stand out. The development process was intense, filled with learning and overcoming obstacles. Just before I was about to finalize the project, curiosity led me to explore whether anyone else had embarked on a similar journey.
+
+              That's when I discovered [Dustin Brett's Portfolio](https://dustinbrett.com/). His project was nothing short of incredible, a testament to creativity and technical skill. It was more fascinating than anything I had envisioned. However, instead of viewing this discovery as a setback, I saw it as a source of inspiration. It reinforced my belief that unique ideas exist to be explored and that PortfolioOS had its own value and charm.
+
+              ## Looking Ahead
+              Despite the existence of similar projects, I believe there is always room for innovation and personal expression. PortfolioOS is a testament to that belief. It's not just a portfolio; it's a journey, an experience that I've created for anyone who wishes to explore my work and creativity in a novel way.
+
+              I'm also considering offering PortfolioOS as a website template. It's completely configurable by one config file, making it easily adaptable for others who wish to share their journey in a unique and interactive manner. If you're interested in making your portfolio stand out, just hit me up [here](#contact)!
+
+              PortfolioOS is more than just a project; it's a reflection of my journey as a developer and a creator. It's a reminder that innovation and creativity have no bounds, and that sometimes, looking back at where we started can inspire us to push even further.
+
+      - type: folder
+        id: spaceping
+        name: Spaceping
+        icon: /icons/spaceping.png
+        start: 2023
+        platform: Web
+        description: Your story travels to the stars
+        apps:
+          - type: image
+            path: /screenshots/spaceping.png
+            name: Screenshot
+          - type: link
+            url: https://www.spaceping.com
+            external: true
+            name: Website
+          - type: markdown
+            id: spaceping-history
+            name: About
+            content: |-
+              # About
+
+              ## The Unexpected Opportunity
+
+              One day, out of the blue, I received a message on [Fiverr](https://www.fiverr.com/paulkoeck), from someone asking if I was available to join their team as a developer. Curiosity piqued, we quickly scheduled a meeting. Little did I know, this meeting would mark the beginning of an extraordinary journey. As I hopped onto the call, I was introduced to [Ortwin Kartmann](https://www.linkedin.com/in/kartmann/!), the founder of [Sofort](https://sofort.com/!). To say I was a bit taken aback would be an understatement.
+
+              ## A Vision Beyond Earth
+
+              During our conversation, Ortwin unveiled his visionary project idea - to collect stories from 1,000,000 people, compile them, and send them to space aboard a rocket! Had I not been aware of who Ortwin was, I might have dismissed the idea as fanciful. However, knowing his background, I was instantly captivated by the concept and eager to be part of this ambitious endeavor.
+
+              ## The Sprint to Launch
+
+              Embracing the challenge, we were faced with a daunting task: to bring this project, dubbed Spaceping, from concept to launch in merely two months. The workload was immense, but fueled by our collective enthusiasm and commitment, we dove headfirst into the development process. About a week into our journey at Spaceping, I introduced my brother, [Simon Koeck](https://simon.koeck.dev), to Ortwin. Impressed by the project's scope and potential, Simon too joined our team, further bolstering our development efforts.
+
+              ## Achieving Milestones and Beyond
+
+              Miraculously, we met our ambitious deadline, releasing Spaceping to the world on time. Over the following months, our team continued to refine the platform, squashing bugs and rolling out new features to enhance the user experience. Eventually, we reached a point where we considered the website to be "good enough for now," recognizing the need to shift our focus towards marketing to propel Spaceping towards its full potential.
+
+              ## Looking to the Future
+
+              The journey with Spaceping has been nothing short of a rollercoaster - challenging, exhilarating, and profoundly rewarding. As we pivot towards expanding our reach and capturing the imagination of millions, I remain incredibly excited to witness the evolution of Spaceping. The dream of sending a rocket filled with human stories into the cosmos is bold, ambitious, and a testament to the power of collaboration and innovation. Here's to reaching for the stars and beyond!
+
+      - type: folder
+        id: boeller
+        name: Böller Architecture
+        icon: /icons/boeller.png
+        start: 2022
+        platform: Website
+        description: Homepage of an architecture office
+        apps:
+          - type: image
+            path: /screenshots/boeller.png
+            name: Screenshot
+          - type: link
+            url: https://boeller.vercel.app/
+            icon: /icons/boeller.png
+            name: Website
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## The Beginning
+
+              One day, while browsing through my Fiverr messages, I received a new project request. This wasn't just any project; it was for the "Architekturbüro Böller", a renowned architecture firm based in Switzerland. The client needed a modern, efficient, and easily manageable website that could showcase their architectural projects in the best light possible.
+
+              ## Choosing the Stack
+
+              To meet the client's needs, I decided to use Next.js with TailwindCSS for the frontend. This combination allowed me to create a sleek, responsive design that adapts to any device, ensuring the website would look great whether viewed on a desktop, tablet, or smartphone. Next.js's server-side rendering capabilities would also improve the website's SEO, making it easier for potential clients to find "Architekturbüro Böller" online.
+
+              ## The CMS Magic
+
+              For the content management system (CMS), I chose Strapi. This headless CMS enabled me to make the entire website fully configurable without the need for additional coding. Every piece of content, from project descriptions to images, could be updated directly through Strapi's intuitive interface. By utilizing the `getStaticProps` function in Next.js, the website loads all its content from Strapi at build time, which greatly enhances its performance and SEO friendliness.
+
+      - type: folder
+        id: crax
+        name: Crax
+        icon: /icons/crax.svg
+        start: 2023
+        platform: Web
+        description: Crack Combination Locks, using Math
+        apps:
+          - type: link
+            url: https://crax.vercel.app
+            name: Website
+          - type: link
+            url: https://github.com/simplifylabs/crax
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: markdown
+            name: Concept
+            content: |-
+              # Concept
+
+              ## Introduction
+              Crax is an innovative concept developed to address a common oversight in the usage of combination locks. Many individuals tend to alter only a few digits of their combination, believing this small change suffices for security. Crax capitalizes on this behavior by meticulously tracking failed attempts to unlock, leveraging mathematical algorithms to predict the actual combination. This approach demonstrates a significant improvement in guessing the correct pin over time, offering a fascinating insight into human habits and security practices.
+
+              ## How It Works
+
+              ### Tracking Invalid Pins
+              The core functionality of Crax revolves around the systematic recording of invalid pin entries on combination locks. This process involves observing and documenting each failed attempt to unlock, providing a dataset from which patterns can emerge.
+
+              ### Mathematical Analysis
+              With a comprehensive collection of incorrect pins, Crax applies a series of mathematical algorithms designed to analyze these entries. The algorithms consider factors such as the frequency of specific digit changes. 
+
+              ### Predictive Accuracy
+              As the volume of tracked data increases, Crax's ability to accurately predict the correct pin improves. This efficiency highlights the concept's potential in understanding and exploiting human tendencies in setting and changing lock combinations.
+
+              ## Ethical Considerations
+              It is imperative to recognize that Crax, while innovative, must be approached with strict ethical considerations. The concept is intended solely for educational purposes or for use on personal combination locks. Utilizing Crax on locks owned by others without their explicit consent constitutes a violation of privacy and legal boundaries, potentially leading to criminal charges.
+
+              ## Conclusion
+              Crax presents a novel approach to understanding and predicting combination lock pins, underlining the importance of robust security practices. By shedding light on common vulnerabilities in lock usage, it encourages individuals to adopt more secure habits in setting their combinations. However, its application must be governed by ethical standards, emphasizing respect for privacy and legality.
+
+      - type: folder
+        id: react-layered
+        name: React Layered
+        icon: /icons/layered.svg
+        start: 2024
+        platform: Package
+        description: zIndex management in react projects
+        apps:
+          - type: link
+            url: https://github.com/poeck/react-layered
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://www.npmjs.com/package/react-layered
+            external: true
+            name: NPM
+
+      - type: folder
+        id: codex
+        name: Codex
+        icon: /icons/codex.png
+        start: 2022
+        platform: Game
+        description: Scan Barcodes for Trading Cards
+        apps:
+          - type: image
+            name: Screenshot
+            path: /screenshots/codex.png
+          - type: link
+            url: https://github.com/simplifylabs/codex
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://github.com/simplifylabs/codex/releases
+            external: true
+            icon: /icons/github.svg
+            name: Download
+          - type: markdown
+            name: Concept
+            content: |-
+              # Concept
+
+              Codex is an innovative mobile game that transforms everyday shopping into an adventurous collectible card game. By simply scanning barcodes on products around you, you unlock unique trading cards, each with its own score ranging from 1-100 and assigned rarity. The thrill of hunting for legendary cards turns mundane tasks into exciting quests, making Codex an engaging experience for users of all ages.
+
+              ## How It Works
+
+              At the heart of Codex lies a smart and seamless mechanism. Each product's barcode contains a unique series of digits. When a user scans a barcode using their mobile device, these digits serve as a seed for a random card generator. This ingenious approach ensures that:
+
+              - **Consistency Across Devices:** Two different devices scanning the same barcode, even in offline mode, will generate the exact same trading card.
+
+              - **Unlimited Discoveries:** With millions of products available worldwide, the possibilities for discovering new cards are virtually endless.
+
+              ---
+
+              Codex merges the physical world with digital collectibles in a way that's accessible, fun, and endlessly captivating. Whether you're in a grocery store, at home, or exploring new places, Codex turns every barcode into a potential treasure trove of collectible cards.
+
+      - type: folder
+        id: todu
+        name: Todu
+        icon: /icons/todu.svg
+        start: 2022
+        platform: CLI
+        description: To-Do-List, but for your Terminal
+        apps:
+          - type: image
+            name: Screenshot
+            path: /screenshots/todu.gif
+            window:
+              width: 600
+              height: 390
+              fullscreen: false
+          - type: link
+            url: https://github.com/simplifylabs/todu
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://www.npmjs.com/package/todu
+            external: true
+            name: NPM
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Introduction
+
+              Todu is a minimalistic Command-Line Interface (CLI) designed to streamline the management of your project's to-do lists. Tailored specifically for development projects, Todu introduces a seamless way to keep track of tasks, ensuring nothing falls through the cracks. Its simplicity and effectiveness make it an indispensable tool for developers seeking to maintain organized and efficient workflows.
+
+              ## The Big Twist: Markdown Integration
+
+              What sets Todu apart is its innovative approach to storing to-do lists. Unlike traditional methods that rely on separate files or databases, Todu utilizes a `TODO.md` file in markdown format. This integration offers several key advantages:
+              - **Version Control Compatibility:** Since the to-do list is stored as a markdown file, it can be easily tracked with version control systems like git. This means your to-do list evolves alongside your project, with changes documented and retrievable at any point in time.
+              - **Accessibility:** The markdown format ensures that the to-do list is readable and editable not just through the CLI, but also directly on platforms that support markdown rendering, such as GitHub. This accessibility ensures that you can update or review tasks even without the CLI installed.
+              - **Collaboration:** Sharing and collaborating on to-do lists becomes straightforward. Team members can view, edit, and discuss tasks directly within the project's repository, fostering better communication and task management.
+
+              ## Personal Endorsement
+              #
+              I have personally integrated Todu into every project I've worked on since its inception. Its simplicity, coupled with the power of markdown and version control integration, has transformed the way I manage project tasks. Todu has not only improved my productivity but also enhanced the overall organization and progress tracking of my projects.
+
+      - type: folder
+        id: uniquer
+        name: Uniquer
+        icon: /icons/uniquer.svg
+        start: 2022
+        platform: Package
+        description: Concept for file efficient storage
+        apps:
+          - type: link
+            url: https://github.com/simplifylabs/uniquer
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://www.npmjs.com/package/uniquer
+            external: true
+            name: NPM
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## The Idea Behind Uniquer
+
+              Uniquer is a revolutionary concept designed to optimize file management and storage efficiency. The core idea is simple yet powerful: save equal files only once and avoid duplicates. This approach is not just about saving space—it's about creating a smarter, more efficient way to handle files on your system.
+
+              Implemented in just a single line of code, Uniquer brings a seamless experience to managing files, ensuring that each file is unique, thus eliminating the need for duplicate copies. This straightforward strategy offers multiple benefits, making file management a breeze while enhancing your system's performance.
+
+              ## Advantages of Using Uniquer
+
+              - 📦 **Save Storage**: By ensuring no duplicates are saved, Uniquer significantly increases available storage space, allowing you to make the most out of your device's capacity.
+
+              - 💻 **Save Performance**: Uniquer optimizes performance by writing a file only if it doesn't already exist, reducing unnecessary write operations on your storage media.
+
+              - 📁 **Get Unique File Names**: Forget about spending time thinking up new file names to avoid duplication. Uniquer automatically generates a unique file name for each set of data, simplifying file management.
+
+              - 🧹 **Keep It Clean**: A clean file system is a happy file system. With no duplicates and fewer files to manage, your directories stay organized and clutter-free.
+
+              ## How It Works
+
+              Uniquer employs a straightforward yet effective mechanism to ensure file uniqueness:
+
+              1. Create the SHA256 hash of the passed data, ensuring a unique identifier for each file content.
+              2. Generate the file name by appending the appropriate file extension to the hash.
+              3. Before creating a new file, check if a file with the generated name already exists.
+                 - If not, the file is created.
+                 - If yes, no action is taken, avoiding duplicate file creation.
+
+              This process guarantees that for any given set of data, only one file is created and stored. If you attempt to write the same data multiple times, Uniquer will:
+
+              - Write the data only once.
+              - Create only a single file.
+
+              With SHA256 hash function's reliability, there's no need to worry about duplicate file names. The chances of a hash collision are astronomically low, ensuring that each file name is as unique as the data it represents.
+
+              ## Collision-Free Assurance
+
+              The uniqueness offered by Uniquer is backed by the robust SHA256 hashing algorithm, which has never encountered a collision. This means that every piece of data processed by Uniquer is guaranteed to have a distinct file name, ensuring the utmost efficiency in file management and storage.
+
+              Uniquer is not just a tool; it's a new way of thinking about how we store and manage files, ensuring efficiency, cleanliness, and uniqueness at every step of the way.
+
+      - type: folder
+        name: Love Packager
+        icon: /icons/love.svg
+        start: 2022
+        platform: CLI
+        description: CLI to package your LÖVE projects
+        apps:
+          - type: link
+            url: https://github.com/simplifylabs/love-packager
+            icon: /icons/github.svg
+            external: true
+            name: GitHub
+          - type: link
+            url: https://www.npmjs.com/package/love-packager
+            external: true
+            name: NPM
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Introduction
+
+              I once had the opportunity to work on a unique client project that utilized the [Love2D](https://love2d.org/) game engine. Love2D is a fantastic framework for game development, offering flexibility and ease of use for developers looking to bring their creative visions to life. I highly recommend checking it out if you're interested in game development.
+
+              ## The Challenge
+
+              After completing the project, I faced the challenge of packaging the game into an executable form. This step is crucial for distribution and accessibility, allowing users to run the game on their devices without needing to install additional software or interpreters. However, I encountered several hurdles in this process. I tried various existing packagers, but found them either overly complex for my needs or simply ineffective.
+
+              ## The Solution
+
+              Determined to find a better solution, I decided to take matters into my own hands. This led me to create **love-packager**, a Command Line Interface (CLI) tool designed to simplify the packaging process for Love2D projects. My goal with love-packager was to eliminate the complexities and issues I faced, making it as straightforward as possible for other developers to package their Love2D games.
+
+              ## Features of Love-Packager
+
+              - **Ease of Use**: love-packager is built with simplicity in mind, enabling developers to package their projects with minimal commands.
+              - **Efficiency**: Streamlines the packaging process, saving time and effort.
+              - **Compatibility**: Designed to work seamlessly with Love2D projects, ensuring a smooth packaging experience.
+
+              ## Conclusion
+
+              Creating love-packager was a rewarding experience, not only solving a personal challenge but also contributing a tool that could benefit the Love2D community. It embodies my commitment to problem-solving and my passion for making game development more accessible to others. Whether you're a seasoned game developer or just starting out, I hope love-packager can make your journey a little easier.
+
+              Feel free to explore love-packager and reach out if you have any questions or feedback. Together, let's continue to push the boundaries of game development with Love2D and beyond.
+
+      - type: folder
+        id: frags
+        name: Frags
+        icon: /icons/frags.png
+        start: 2020
+        platform: Mobile
+        description: Convert your Phone into a Macro Deck
+        apps:
+          - type: image
+            path: /screenshots/frags.png
+            name: Screenshot
+          - type: link
+            url: https://play.google.com/store/apps/details?id=com.simplifysoftware.frags
+            external: true
+            name: Play Store
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Introduction to Frags
+
+              Frags marks my second project and my inaugural journey into mobile app development. Conceived with the vision of enhancing the functionality of mobile keyboards, Frags introduced a novel concept: extending your keyboard with highly customizable macro keys. This innovation was aimed at users looking to streamline their mobile interactions, offering them a tailored experience that could adapt to their unique needs and preferences.
+
+              ## Growth and Recognition
+
+              Initially, the app experienced modest growth, gradually building its user base. However, this trajectory changed dramatically when Frags caught the attention of the online community, thanks to a feature by [Cinecom](https://www.youtube.com/watch?v=P4ySShjYdeQ!) on YouTube. This unexpected spotlight propelled Frags into the limelight, resulting in a surge of thousands of downloads virtually overnight. The feature by Cinecom not only showcased the utility and innovative approach of Frags but also highlighted its potential to revolutionize the way users interact with their mobile devices. As a result, the app witnessed a remarkable increase in popularity, amassing over **15,000 downloads**.
+
+              ## A Difficult Decision
+
+              Despite the success and the promising trajectory Frags was on, I made the difficult decision to discontinue the project in 2023. This decision was not taken lightly but was necessitated by my commitment to another project, [Remark](#remark). The need to allocate my resources and focus to Remark meant that I could no longer sustain the development and support required for Frags. Discontinuing Frags was a tough choice but one that was necessary for me to pursue new opportunities and challenges.
+
+              ## Legacy and Lessons Learned
+
+              The journey of developing and growing Frags has been an invaluable learning experience. It taught me the importance of innovation, the power of exposure through media, and the tough decisions that sometimes need to be made for the greater good of one's aspirations. Frags will always hold a special place in my portfolio as my first mobile app and a testament to the potential of innovative ideas to make a significant impact.
+
+      - type: folder
+        id: foxfunding
+        name: FoxFunding
+        icon: /icons/foxfunding.png
+        start: 2022
+        platform: Web
+        description: Get Funded for your Trades
+        apps:
+          - type: link
+            id: foxfunding-archive
+            url: https://foxfunding.vercel.app
+            name: Archive
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Funding for Traders
+
+              FoxFunding was an ambitious project designed to offer traders the opportunity to trade with our capital and keep the profits. The idea was to create a platform where traders, regardless of their background or financial capacity, could access significant trading funds. This initiative aimed to democratize trading by removing the financial barriers that prevent talented traders from scaling their strategies.
+
+              ### The Journey
+
+              As outlined in the [About Me](#about) section, FoxFunding was a project that I embarked on early in my web development career. It represented a pivotal moment where I began to blend my passion for finance with my growing skills in web development. The concept was simple yet powerful: empower traders by providing them with the capital needed to execute their trades and allow them to retain the profits.
+
+              ### Shift in Focus
+
+              While FoxFunding was a project close to my heart, the unexpected success of another venture, [TraderEdge](#traderedge), led to a shift in focus. TraderEdge's growth and potential demanded more attention, leading to the difficult decision to archive FoxFunding. This decision was not made lightly, but it was necessary to allocate resources where they could be most effective. The archive of FoxFunding can be found [here](#foxfunding-archive).
+
+              ### Lessons Learned
+
+              Despite the project not reaching its full potential, the experience of building FoxFunding was invaluable. It was during this time that I honed my skills in web development, learned about the intricacies of the financial market, and understood the importance of pivot when necessary. FoxFunding might not have become what we envisioned initially, but it played a crucial role in my growth as a developer and an entrepreneur.
+
+              ### Reflections
+
+              Looking back, FoxFunding was more than just a project; it was a learning curve. It taught me resilience, the importance of adaptability, and the value of pursuing your passions. While it might be archived, the lessons learned and the experiences gained will forever influence my journey in the tech and financial worlds.
+
+              In the end, every line of code contributed to my development and every strategy session enriched my understanding of the market. FoxFunding may have been archived, but its impact remains a significant chapter in my journey.
+
+      - type: folder
+        id: editor
+        name: Minimal Editor
+        icon: /icons/minimaleditor.png
+        start: 2021
+        platform: Desktop
+        description: Just a Minimalistic Text Editor
+        apps:
+          - type: image
+            name: Screenshot
+            path: /screenshots/editor.png
+          - type: link
+            url: https://github.com/poeck/MinimalEditor
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://github.com/poeck/MinimalEditor/releases
+            external: true
+            icon: /icons/github.svg
+            name: Download
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Introduction
+
+              Minimal Editor is a sleek, user-friendly desktop application designed to offer a streamlined text editing experience. Born from a desire to create a tool that includes only the essentials, Minimal Editor stands out for its simplicity and efficiency. It's the perfect solution for users who need to make quick adjustments to their files without the clutter and complexity of traditional text editors.
+
+              ## Features
+
+              - **Simplicity at its Core:** With a focus on minimalism, the interface is intuitive, making it easy for anyone to start editing immediately.
+              - **Essential Functionalities:** Despite its simplicity, Minimal Editor is equipped with everything you need for basic text editing, including:
+                - Text manipulation shortcuts, making editing operations like cut, copy, paste, and undo straightforward and accessible.
+                - Syntax highlighting, supporting various programming languages to enhance readability and editing efficiency.
+
+              ## Background
+
+              As one of my first forays into desktop application development, Minimal Editor was primarily an educational project. My goal was to delve into the capabilities of ElectronJS, a framework for creating native applications with web technologies. Through this project, I explored the intricacies of developing desktop apps, from managing windows to integrating system functionalities.
+
+              ## Related Projects
+
+              A similar project worth mentioning is [Minimal Browser](#browser), a minimalistic web browser designed with the same principles in mind.
+
+              ## Conclusion
+
+              Minimal Editor is more than just a text editor; it's a testament to the power of simplicity in software design. By stripping away the unnecessary and focusing on the essentials, it provides a refreshing editing experience that prioritizes efficiency and ease of use. Whether you're making minor edits or exploring the basics of programming, Minimal Editor is a reliable companion for your desktop.
+
+      - type: folder
+        id: browser
+        name: Minimal Browser
+        icon: /icons/minimalbrowser.png
+        start: 2021
+        platform: Desktop
+        description: Just a Minimalistic Web Browser
+        apps:
+          - type: image
+            name: Screenshot
+            path: /screenshots/browser.png
+          - type: link
+            url: https://github.com/poeck/MinimalBrowser
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: link
+            url: https://github.com/poeck/MinimalBrowser/releases
+            external: true
+            icon: /icons/github.svg
+            name: Download
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## A Journey into Simplistic Web Browsing
+
+              The project, named **Minimal Browser**, stands true to its moniker by offering a streamlined and fundamental approach to web browsing. This project encapsulates the essence of simplicity, providing just the essentials needed for navigating the internet. Born out of curiosity and a keen interest to dive into the realms of desktop application development, Minimal Browser emerged as one of my initial forays into crafting desktop apps.
+
+              ## The Genesis
+
+              My exploration into **ElectronJS** served as the cornerstone for this project. The intent was to grasp the intricacies of developing desktop applications and to imbue my learning journey with a tangible outcome. Minimal Browser, thus, was not just a project but a stepping stone in my odyssey of understanding ElectronJS and the mechanics of desktop app development.
+
+              ## Unintended Consequences
+
+              What started as a small side project, burgeoned into something of an unforeseen phenomenon within my school. In a serendipitous twist, I discovered that Minimal Browser adeptly bypassed the school's security systems. This feature, albeit unintended, made it a popular tool among students. It turned into the go-to solution for accessing entertainment and leisure websites, such as video game portals and YouTube, circumventing the restrictions imposed by the school's network.
+
+              The revelation of this capability led to Minimal Browser being downloaded thousands of times by students, eager to explore the vastness of the web unrestricted during their school hours. This unexpected utility of the browser highlighted the unforeseen impacts technology can have, transcending its original purpose and scope.
+
+              ## A Companion Project: Minimal Editor
+
+              In the spirit of minimalism and simplicity, another project that paralleled the development of Minimal Browser was **[Minimal Editor](#editor)**. This project is a testament to the beauty of minimalistic design, offering a straightforward and clutter-free text editing experience. Just as Minimal Browser simplifies web browsing, Minimal Editor encapsulates the essence of text editing in its most basic form.
+
+              ## Conclusion
+
+              The journey of developing Minimal Browser has been both enlightening and unexpected. It served not only as a learning experience in using ElectronJS and creating desktop applications but also as a reminder of the unpredictable ways in which technology can evolve and influence our daily lives. Minimal Browser, with its simple yet effective functionality, underscores my belief in the power of minimalism and the importance of learning through doing.
+
+      - type: folder
+        name: Tisis School
+        icon: /icons/vstisis.svg
+        start: 2021
+        platform: Website
+        description: Homepage of a Primary School
+        apps:
+          - type: image
+            id: tisis-screenshot
+            name: Screenshot
+            window:
+              width: 700
+              height: 635
+              fullscreen: true
+            path: /screenshots/vstisis.jpg
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              ## Introduction
+
+              Throughout my journey in technology and entrepreneurship, I have always sought opportunities to blend innovation with public service. This drive led me to contribute to a project that holds a special place in my portfolio - the "Public Service" project. Initiated as a school project, it provided me with a unique opportunity to apply my coding skills for a noble cause.
+
+              ## Choosing My Path
+
+              When presented with the freedom to choose our contributions to the "Public Service" project, I gravitated towards what I do best - coding. This decision opened the door to a collaboration that not only challenged me but also promised to make a significant impact on a local community.
+
+              ## Collaboration with a Primary School
+
+              Eager to make a meaningful contribution, I reached out to the headmaster of a nearby Primary School. The prospect of providing the school with a free website was met with enthusiasm and excitement. It was a perfect match; my passion for coding and the school's need for a digital presence. Unfortunately, the headmaster's departure from the school led to the project's premature conclusion, with the website never seeing the light of day online.
+
+              ## A Glimpse into What Could Have Been
+
+              Despite the unforeseen halt, the work on the "Public Service" project remains a testament to the potential impact of technology in education and community service. For those interested, a small screenshot of the project can be viewed [here](#tisis-screenshot). It represents not only what was achieved but also what could have been, serving as a reminder of the importance of perseverance and flexibility in the face of challenges.
+
+              ## Reflections
+
+              The journey of the "Public Service" project, although not culminating in a live website, has been invaluable. It taught me the significance of initiative, collaboration, and adaptability. These experiences continue to shape my approach to technology and entrepreneurship, fueling my drive to create solutions that serve the community.
+
+              I invite you to explore more about my projects and the impact they aim to create. Together, let's harness the power of technology to make a difference.
+
+      - type: folder
+        id: terminal
+        name: Terminal Portfolio
+        icon: /icons/terminal.svg
+        start: 2021
+        platform: Website
+        description: A Portfolio in style of a Terminal
+        apps:
+          - type: image
+            name: Screenshot
+            path: /screenshots/terminal.png
+          - type: link
+            url: https://github.com/poeck/TerminalPortfolio
+            external: true
+            icon: /icons/github.svg
+            name: GitHub
+          - type: markdown
+            name: About
+            content: |-
+              # About
+
+              Like every developer embarking on the journey of self-expression and professional showcase, the need for a portfolio website became evident. The quest for uniqueness and personal branding led to an intriguing idea: a portfolio styled as a Terminal. This wasn't just an aesthetic choice; it was a nod to the roots of computing, a homage to the interface that many developers call home. Thus, the Terminal Portfolio was born, marking the first step towards a more ambitious project.
+
+              ## The Birth of Terminal Portfolio
+
+              The idea was simple yet captivating. Instead of the traditional, visually rich websites that most portfolios embraced, the Terminal Portfolio would offer an experience reminiscent of the command-line interfaces that power the underbelly of the tech world. It was a daring deviation from the norm, aiming to engage visitors in an interactive exploration of skills, projects, and experiences through commands and text-based navigation.
+
+              ## Evolution into PortfolioOS
+
+              What started as a novel concept for a portfolio soon evolved into something much grander. The Terminal Portfolio was not just a website; it became the foundation for PortfolioOS—an operating system styled portfolio. This evolution reflected a deeper vision, transforming a single-page website into an OS-like experience where visitors could explore, interact, and learn more about the my journey and capabilities as if they were navigating an actual operating system.
+
+              ## Discovering Fellow Creators
+
+              Upon venturing further into the landscape of developer portfolios, it became apparent that the concept of a terminal-styled portfolio was not entirely uncharted. Other developers had treaded similar paths, crafting their unique interpretations of terminal-based portfolios. One notable example is [terminal.satnaing.dev](https://terminal.satnaing.dev/), a beautifully executed terminal-style portfolio that stands out for its design, functionality, and user experience—surpassing the original Terminal Portfolio in several ways. This discovery was not a setback but a source of inspiration, highlighting the creativity and ingenuity within the developer community.
+
+              ## Reflection and Inspiration
+
+              The journey of creating the Terminal Portfolio and its evolution into PortfolioOS serves as a testament to the power of a single idea and the endless possibilities it can unlock. It's a story of innovation, learning, and community—a reminder that in the realm of technology, the pursuit of unique expressions and solutions can lead to unexpected and rewarding paths.
+
+              If you're intrigued by the concept of PortfolioOS and wish to explore this operating system styled portfolio further, you can read more about it [here](#portfolio).
+
+      - type: folder
+        name: Live! Casino
+        icon: /icons/casino.svg
+        start: 2021
+        platform: Desktop
+        description: Private App for Special Poker Events
+        apps:
+          - type: folder
+            name: Screenshots
+            apps:
+              - type: image
+                name: Screenshot 1
+                path: /screenshots/live/1.png
+              - type: image
+                name: Screenshot 2
+                path: /screenshots/live/2.png
+              - type: image
+                name: Screenshot 3
+                path: /screenshots/live/3.png
+          - type: markdown
+            name: About
+            content: |-
+
+      - type: folder
+        id: traderedge
+        name: TraderEdge
+        icon: /icons/traderedge.png
+        start: 2021
+        platform: Web
+        description: Backtest & Journal all Your Trades
+        apps:
+          - type: link
+            url: https://www.traderedge.app
+            name: Website
+
+      - type: folder
+        id: crack
+        name: Crack Launcher
+        icon: /icons/crack.svg
+        start: 2020
+        platform: Game
+        description: Puzzle-Game around Hacking
+        apps:
+          - type: image
+            path: /screenshots/crack.png
+            name: Screenshot
+          - type: link
+            url: https://ldjam.com/events/ludum-dare/46/cr4ck-launcher
+            external: true
+            name: Ludum Dare
+
+  - type: folder
+    id: socials
+    name: Socials
+    window:
+      width: 550
+      height: 180
+    apps:
+      - type: link
+        name: GitHub
+        url: https://github.com/poeck
+        icon: /icons/github.svg
+        external: true
+
+      - type: link
+        name: Fiverr
+        url: https://www.fiverr.com/paulkoeck
+
+      - type: link
+        name: LinkedIn
+        url: https://www.linkedin.com/in/paul-k%C3%B6ck-1221a3219/
+        external: true
+
+      - type: link
+        name: Codepen
+        url: https://codepen.io/paulkoeck
+        favicon:
+          circle: true
+          background: white
+        external: true
+
+      - type: link
+        name: X
+        url: https://twitter.com/pauxels
+        favicon:
+          circle: true
+          padding: 3
+          background: black
+        external: true
+
+  - type: folder
+    name: Legal
+    list: true
+    seo: false
+    window:
+      width: 300
+      height: 160
+    apps:
+      - type: markdown
+        name: Imprint
+        seo: false
+        content: |-
+          # Imprint
+
+          _Obligation to provide information according to §5 E-Commerce Law, §63 Trade Regulation Act, §14 Corporate Code, and disclosure obligation according to §25 Media Law._
+
+          ## Contact Information
+
+          Paul Koeck \
+          Wolf-Huber-Straße 31 \
+          6800 Feldkirch \
+          Austria
+
+          **Phone**: +43 670 6081524 \
+          **E-Mail**: [paul@koeck.dev](mailto:paul@koeck.dev)
+
+          ## Accountability for content
+
+          The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this matter, please note that we are not obliged to monitor the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).
+
+          ## Accountability for links
+
+          Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.
+
+          ## Copyright
+
+          Our web pages and their contents are subject to the Austria copyright law. Unless expressly permitted by law, every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are only allowed for private use. The materials from these pages are copyrighted and any unauthorized use may violate copyright laws.
+
+      - type: markdown
+        name: Privacy Policy
+        seo: false
+        content: |-
+          # Privacy Policy
+
+          This privacy policy describes how we collect, use, and share information about you when you visit our website. We are committed to ensuring that your privacy is protected and understand the importance of privacy to our visitors and users.
+
+          ## Hosting
+
+          Our website is hosted on Vercel, which provides us with the online platform that allows us to present our content to you. Your data may be stored through Vercel's data storage, databases, and general applications. They store your data on secure servers behind a firewall.
+
+          ## Data Sharing and Disclosure
+
+          We do not sell, trade, or rent your personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners and trusted affiliates for the purposes outlined above.
+
+          ## Your Rights
+
+          You have the right to access, rectify, or erase any personal information we hold about you. If you would like to exercise these rights, please contact us at [paul@koeck.dev](mailto:paul@koeck.dev).
+
+          ## Changes to This Privacy Policy
+
+          We reserve the right to update or change our Privacy Policy at any time. You should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.
+
+          ## Analytics 
+
+          For web analytics, we use Pirsch Analytics. Pirsch Analytics is a cookie-free web analytics software that was developed according to the Privacy by Design principle. To analyze visitor flows, Pirsch Analytics uses a hashing algorithm to generate a 16-digit number as the visitor ID when the page request is received. The input values are the IP address, the user agent, the date and a salt.
+
+          The visitor's IP address is not persisted in whole or in part, and is anonymized completely and non-reversibly by the hash. The inclusion of the date and the use of one salt per website ensures that website visitors cannot be recognized for more than 24 hours and cannot be tracked across multiple websites. A rough localization (country/city) is performed via a locally integrated database.
+
+          ## Contact Us
+
+          If you have any questions about this Privacy Policy, please contact us at [paul@koeck.dev](mailto:paul@koeck.dev).
