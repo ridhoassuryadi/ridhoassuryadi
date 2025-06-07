@@ -6,6 +6,6 @@ const config = yaml.parse(raw);
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: config?.seo?.url || "https://example.com",
+  siteUrl: config?.seo?.url || "https://ridhoassuryadi.com",
   generateRobotsTxt: true,
 };

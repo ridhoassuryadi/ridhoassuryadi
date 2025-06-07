@@ -5,18 +5,17 @@ pirsch:
 seo:
   url: https://paul.koeck.dev
   title:
-    default: Paul Koeck | Web & App Developer
-    suffix: "| Paul Koeck"
+    default: Ridho Assuryadi | Software Engineer & Designer
+    suffix: "| Ridho Assuryadi"
   description:
-    My name is Paul Koeck, a passionate Fullstack Web & App Developer from
-    Austria. I specialize in creating engaging digital experiences that blend innovative
-    design with powerful technology. Discover my work and how I can bring your ideas
-    to life.
+    Hey, I'm Ridho. I'm a Software Engineer who loves design. I'm currently
+    building Design System at Ruangguru and Crafting Amazing things at Ruangkerja,
+    an LMS for a training company or organization.
   keywords: portfolio,developer,apps,web,websites,full-stack,javascript,react,typescript
   routes:
     - path: /about
       title: About Me
-      description: Here's a brief journey through my coding adventure and the milestones along the way.
+      description: Learn about Ridho's journey from a designer to a software engineer, his experiences, and his passion for building impactful products.
       id: about
     - path: /projects
       title: Projects
@@ -32,8 +31,8 @@ seo:
       id: contact
 
 user:
-  name: Paul Koeck
-  description: Fullstack Web & App Developer
+  name: Ridho Assuryadi
+  description: Software Engineer who loves design
   avatar: /user/avatar.png
 
 notifications:
@@ -57,7 +56,15 @@ apps:
     content: |-
       # My Story
 
-      Hi! 👋 My name is Paul Koeck and I am a young full-stack web & app developer from Austria. Here's a brief journey through my coding adventure and the milestones along the way.
+            # My Story
+
+      Hey, I'm Ridho. I'm a Software Engineer who loves design. I'm currently building Design System at Ruangguru and Crafting Amazing things at Ruangkerja, an LMS for a training company or organization.
+
+      I start my career as a Designer right after graduating from Senior high school. After 1 year, I decided to join the coding boot camp. After that, I entered the world of IT as a software engineer. I have worked with many startups. On top of that, I am so glad I have had opportunities to lead and grow the team starting from the early stage of my career.
+
+      I am a highly motivated and enthusiastic person who enjoys taking on challenges and achieving personal goals. I am adaptable, responsible, hardworking, and detail-oriented. I enjoy working on my own initiative or in a team. 
+
+      Please read through my profile, and I look forward to collaborating with you!
 
       ## The Spark of Interest
 
@@ -96,7 +103,7 @@ apps:
   - type: email
     id: contact
     name: Contact Me
-    email: paul@koeck.dev
+    email: ulunmuhammadridho@gmail.com
     subject: Contact request from Portfolio
     window:
       width: 400
