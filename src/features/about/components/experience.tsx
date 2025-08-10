@@ -30,31 +30,67 @@ const Svg3 = () => (
 export default function Experience() {
   const items = [
     {
-      title: "Senior Developer and VP of Product at Qonto",
+      title: "Engineering Manager at Red Ant Colony",
       link: "#0",
       icon: <Svg1 />,
-      date: "2021 - Today",
-      location: "London, UK",
+      date: "2025 - Today",
+      location: "Yogyakarta, Indonesia",
       description:
         "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
     },
     {
-      title: "Fullstack Developer at Medium Inc.",
+      title: "Co-Founder at Raizora",
       link: "#0",
       icon: <Svg2 />,
-      date: "2019 - 2021",
-      location: "New York, NYC",
+      date: "2024 - Today",
+      location: "Banjarbaru, Indonesia",
       description:
         "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
     },
     {
-      title: "System Engineer and Web Developer at Vimeo",
+      title: "Senior Frontend Engineer at Ruangguru",
+      link: "#0",
+      icon: <Svg3 />,
+      date: "2019 - 2024",
+      location: "Jakarta, Indonesia",
+      description:
+        "Led 6-engineer frontend team managing web, mobile, and CMS platforms using React, React Native, Next.js, and TypeScript. Drove major technical initiatives including mobile app architecture migration and cross-platform design system development. Streamlined frontend hiring processes, mentored team members through 1:1s, and collaborated cross-functionally with stakeholders to prioritize and deliver high-impact features while maintaining technical excellence and team growth.",
+    },
+    {
+      title: "Associate Project Manager at Neumedira",
+      link: "#0",
+      icon: <Svg3 />,
+      date: "2023 - 2024",
+      location: "Jakarta, Indonesia",
+      description:
+        "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
+    },
+    {
+      title: "Frontend Engineer at Kitabisa",
       link: "#0",
       icon: <Svg3 />,
       date: "2017 - 2019",
-      location: "London, UK",
+      location: "Jakarta, Indonesia",
       description:
-        "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
+        "Developed frontend solutions for Kitabisa, Indonesia's leading fundraising platform, translating UI designs into responsive web applications using JavaScript, CSS, Sass, and API integration. Collaborated with cross-functional stakeholders (Product, CTO, CPO) to enhance existing products. Led technical modernization initiatives including introducing ReactJS architecture to replace legacy jQuery systems and creating B2B landing page templates that optimized engineering resources by 40%, resulting in more maintainable and scalable codebase.",
+    },
+    {
+      title: "IT Support at STIKES Husada Borneo",
+      link: "#0",
+      icon: <Svg3 />,
+      date: "2016 - 2017",
+      location: "Banjarbaru, Indonesia",
+      description:
+        "Managed complete IT infrastructure including wired/wireless network installation and maintenance (LAN, WAN, TCP/IP, routing, subnetting). Provided technical support for software/hardware issues, troubleshot networking equipment and devices (routers, access points, PCs, laptops, printers). Handled procurement of company assets and office supplies while creating graphic design content for monthly events and college graduation materials.",
+    },
+    {
+      title: "Graphic Designer at Kaos Bagoes",
+      link: "#0",
+      icon: <Svg3 />,
+      date: "2016 - 2017",
+      location: "Banjarbaru, Indonesia",
+      description:
+        "Assigned to help design posters, design clothes to assist in screen printing clothes in the field.",
     },
   ];
 
