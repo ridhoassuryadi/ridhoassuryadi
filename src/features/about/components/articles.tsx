@@ -1,23 +1,23 @@
 export default function Articles() {
   const items = [
     {
-      title: "KumoX Images Now available On Docker Hub",
-      link: "#0",
-      source: "medium.com",
+      title: "Eps 57 - Belajar Koding Hari Gini",
+      link: "https://podcasts.apple.com/us/podcast/057-belajar-koding-hari-gini-dengan-muhammad-ridho/id1306937374?i=1000416359501",
+      source: "Ceritanya Developer Podcast",
       description:
-        "Today, KumoX announced that it has become a DVP, marking a significant milestone for our shared mission to enhance the security.",
+        "Menceritakan pengalaman Muhammad Ridho yang ikut Bootcamp online & offline setelah lulus SMK. Saat ini bekerja sebagai frontend developer di KitaBisa.com dan freelance desainer. Semuanya tidak menyurutkan niatnya untuk kuliah dan dia masih punya cita-cita besar dari ilmu yang akan dia dapatkan dari kuliahnya itu. Lihat https://devmuslim.id/episode57 untuk catatan dan link yang dibahas di episode ini.",
     },
     {
-      title: "Nobody Wants To Work with Josh",
-      link: "#0",
-      source: "medium.com",
+      title: "JogjaJS Meetup 11 -  Jump Start to ReactJS",
+      link: "https://www.linkedin.com/in/m-ridho/details/experience/1524698334958/single-media-viewer/?profileId=ACoAACBcl9kB4RydG136NO2SxyGAoqAtGZUu57E",
+      source: "JogjaJS Meetup",
       description:
         "There was a wizard engineer (we'll call him “Josh”) who worked for me a few years ago. His code was good. His PRs were quick.",
     },
     {
-      title: "A Sharp And Solid Outline Of 3D Grid Magic",
+      title: "Kukode Sharing - Meetup",
       link: "#0",
-      source: "indiehackers.com",
+      source: "Kukode",
       description:
         "Since the world is 3D, it's no surprise that video games, mobile robotics challenges, and architectural design tools often require 3D variants.",
     },
@@ -26,7 +26,7 @@ export default function Articles() {
   return (
     <section className="mt-10">
       <h2 className="font-inter-tight text-lg font-semibold text-gray-800 mb-6">
-        Articles
+        Featured
       </h2>
       <div className="space-y-1">
         {items.map((item, index) => (

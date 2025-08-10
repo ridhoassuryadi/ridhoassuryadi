@@ -76,10 +76,12 @@ export default function Recommendations() {
     containerRef.current?.addEventListener("mouseout", playCarousel);
     containerRef.current?.addEventListener(
       "focus",
-      (event) => {
+      (event: FocusEvent) => {
         if (
           event.currentTarget &&
-          !(event.currentTarget as Node).contains(event.relatedTarget as Node)
+          !(event.currentTarget as unknown as Node).contains(
+            event.relatedTarget as Node | null,
+          )
         ) {
           pauseCarousel();
         }
@@ -87,11 +89,13 @@ export default function Recommendations() {
       true,
     );
     containerRef.current?.addEventListener(
-      "blur-sm",
-      (event) => {
+      "blur",
+      (event: FocusEvent) => {
         if (
           event.currentTarget &&
-          !(event.currentTarget as Node).contains(event.relatedTarget as Node)
+          !(event.currentTarget as unknown as Node).contains(
+            event.relatedTarget as Node | null,
+          )
         ) {
           playCarousel();
         }
@@ -108,10 +112,12 @@ export default function Recommendations() {
       containerRef.current?.removeEventListener("mouseout", playCarousel);
       containerRef.current?.removeEventListener(
         "focus",
-        (event) => {
+        (event: FocusEvent) => {
           if (
             event.currentTarget &&
-            !(event.currentTarget as Node).contains(event.relatedTarget as Node)
+            !(event.currentTarget as unknown as Node).contains(
+              event.relatedTarget as Node | null,
+            )
           ) {
             pauseCarousel();
           }
@@ -119,11 +125,13 @@ export default function Recommendations() {
         true,
       );
       containerRef.current?.removeEventListener(
-        "blur-sm",
-        (event) => {
+        "blur",
+        (event: FocusEvent) => {
           if (
             event.currentTarget &&
-            !(event.currentTarget as Node).contains(event.relatedTarget as Node)
+            !(event.currentTarget as unknown as Node).contains(
+              event.relatedTarget as Node | null,
+            )
           ) {
             playCarousel();
           }
