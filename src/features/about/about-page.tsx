@@ -3,11 +3,10 @@ import { Paragraph } from "@/components/Paragraph";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import Articles from "./components/Articles";
+import Articles from "./components/articles";
 import Projects from "@/app/contact/page";
-import { Contact } from "@/components/Contact";
 import SideHustles from "./components/side-hustles";
-import Experience from "./components/Experience";
+import Experience from "./components/experience";
 
 export default function About() {
   const images = [
