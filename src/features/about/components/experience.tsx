@@ -1,3 +1,13 @@
+import RaizoraLogo from "@/shared/assets/raizora-logo.svg";
+import KaosBagoesLogo from "@/shared/assets/kaos-bagoes-logo.png";
+import KitabisaLogo from "@/shared/assets/kitabisa-logo.svg";
+import RuangguruLogo from "@/shared/assets/ruangguru-logo.png";
+import RedAntColonyLogo from "@/shared/assets/red-ant-colony-logo.png";
+import NeumediraLogo from "@/shared/assets/neumedira-logo.png";
+import StikesHusadaBorneoLogo from "@/shared/assets/stikes-husada-logo.png";
+
+import Image from "next/image";
+
 const Svg1 = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
     <path
@@ -19,7 +29,7 @@ const Svg2 = () => (
 );
 
 const Svg3 = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+  <svg xmlns="http://www.w3.org/2000/svg" width="2" height="24">
     <path
       fill="#00ADEF"
       d="M17.995 3.602c-.075 1.725-1.274 4.124-3.674 7.198-2.474 3.15-4.499 4.799-6.223 4.799-1.05 0-1.95-.975-2.7-2.924-.45-1.8-.974-3.524-1.424-5.324-.525-1.95-1.125-2.924-1.725-2.924-.15 0-.6.3-1.424.825L0 4.202c.9-.75 1.8-1.575 2.624-2.325 1.2-1.05 2.1-1.574 2.7-1.65 1.424-.15 2.249.826 2.549 2.85.375 2.175.6 3.6.75 4.124.375 1.8.825 2.774 1.35 2.774.374 0 .974-.6 1.724-1.8.75-1.199 1.125-2.099 1.2-2.698.075-1.05-.3-1.575-1.2-1.575-.45 0-.9.075-1.35.3.9-2.924 2.55-4.274 5.099-4.199 1.8.075 2.624 1.275 2.55 3.599Z"
@@ -31,26 +41,26 @@ export default function Experience() {
   const items = [
     {
       title: "Engineering Manager at Red Ant Colony",
-      link: "#0",
-      icon: <Svg1 />,
+      link: "https://redantcolony.com",
+      icon: <Image src={RedAntColonyLogo.src} alt="Raizora Logo" width={20} height={20} />,
       date: "2025 - Today",
       location: "Yogyakarta, Indonesia",
       description:
-        "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
+        "Led cross-functional engineering team delivering web and mobile solutions for diverse project portfolio. Managed full project lifecycle from technical scoping and architecture design to deployment and maintenance. Collaborated directly with stakeholders to translate business requirements into technical specifications, while mentoring junior developers and establishing code standards. Oversaw resource allocation, sprint planning, and quality assurance processes to ensure on-time delivery of scalable solutions using modern frameworks and technologies.",
     },
     {
       title: "Co-Founder at Raizora",
-      link: "#0",
-      icon: <Svg2 />,
+      link: "https://raizora.com",
+      icon: <Image src={RaizoraLogo.src} alt="Raizora Logo" width={20} height={20} />,
       date: "2024 - Today",
       location: "Banjarbaru, Indonesia",
       description:
-        "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
+        "Founded and led multi-business portfolio across digital services, retail, property, and automotive sectors, managing operations, strategy, and vision while engaging with partners and clients. Currently operating four business lines: Himajin (hobby products/services), Ketuju Creative (full-service digital agency offering web/app development, design, and marketing), Gea Tourism (Yogyakarta-based car rental and travel services), and Tempat Teduh (quality housing solutions). Drove business development from ideation to execution, focusing on innovation and sustainable growth across all verticals.",
     },
     {
       title: "Senior Frontend Engineer at Ruangguru",
-      link: "#0",
-      icon: <Svg3 />,
+      link: "https://ruangguru.com",
+      icon: <Image src={RuangguruLogo.src} alt="Ruangguru Logo" width={24} height={24} />,
       date: "2019 - 2024",
       location: "Jakarta, Indonesia",
       description:
@@ -58,17 +68,17 @@ export default function Experience() {
     },
     {
       title: "Associate Project Manager at Neumedira",
-      link: "#0",
-      icon: <Svg3 />,
-      date: "2023 - 2024",
-      location: "Jakarta, Indonesia",
+      link: "https://neumedira.com",
+      icon: <Image src={NeumediraLogo.src} alt="Raizora Logo" width={14} height={14} />,
+      date: "2024",
+      location: "Banjarbaru, Indonesia",
       description:
-        "Setting vision, leadership, processes while directly participating in communications with clients such as eBay, Amazon, X, Twitch, Instagram, and many others.",
+        "Managed end-to-end development and delivery of two client projects: mini e-commerce platform and cooperative management system. Coordinated development teams while serving as primary liaison between clients and internal stakeholders to define requirements and project scope. Oversaw project timelines, resource allocation, and risk management to ensure successful client deliveries. Facilitated sprint planning, daily standups, and retrospectives while maintaining clear communication channels between technical teams and clients to deliver user-centric.",
     },
     {
       title: "Frontend Engineer at Kitabisa",
-      link: "#0",
-      icon: <Svg3 />,
+      link: "https://kitabisa.com",
+      icon: <Image src={KitabisaLogo.src} alt="Raizora Logo" width={12} height={12} />,
       date: "2017 - 2019",
       location: "Jakarta, Indonesia",
       description:
@@ -77,7 +87,7 @@ export default function Experience() {
     {
       title: "IT Support at STIKES Husada Borneo",
       link: "#0",
-      icon: <Svg3 />,
+      icon: <Image src={StikesHusadaBorneoLogo.src} alt="Raizora Logo" width={20} height={20} />,
       date: "2016 - 2017",
       location: "Banjarbaru, Indonesia",
       description:
@@ -86,8 +96,8 @@ export default function Experience() {
     {
       title: "Graphic Designer at Kaos Bagoes",
       link: "#0",
-      icon: <Svg3 />,
-      date: "2016 - 2017",
+      icon: <Image src={KaosBagoesLogo.src} alt="Raizora Logo" width={28} height={28} />,
+      date: "2016",
       location: "Banjarbaru, Indonesia",
       description:
         "Assigned to help design posters, design clothes to assist in screen printing clothes in the field.",
