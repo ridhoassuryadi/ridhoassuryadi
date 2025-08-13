@@ -8,7 +8,7 @@ import { Blogs } from "@/components/Blogs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blogs | Ridho Assuryadi",
+  title: "Writing | Ridho Assuryadi",
   description:
     "Ridho Assuryadi is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
 };
