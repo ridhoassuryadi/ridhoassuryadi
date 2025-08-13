@@ -1,6 +1,6 @@
 "use client";
-import { navlinks } from "@/constants/navlinks";
-import { Navlink } from "@/types/navlink";
+import { navigationSections } from "@/constants/navlinks";
+import { Navlink, NavigationSection } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
-import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
+import { HamburgerButton, Right } from "@icon-park/react";
 import { isMobile } from "@/lib/utils";
 
 export const Sidebar = () => {
@@ -41,7 +41,7 @@ export const Sidebar = () => {
         className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
         onClick={() => setOpen(!open)}
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
+        <HamburgerButton className="h-4 w-4 text-secondary" theme="outline" />
       </button>
     </>
   );
@@ -57,47 +57,74 @@ export const Navigation = ({
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="flex flex-col space-y-1 my-10 relative z-[100]">
-      {navlinks.map((link: Navlink) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          onClick={() => isMobile() && setOpen(false)}
-          className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
-            isActive(link.href) && "bg-white shadow-lg text-primary"
+    <div className="flex flex-col my-10 relative z-[100]">
+      {navigationSections.map((section: NavigationSection, sectionIndex) => (
+        <div key={sectionIndex} className="mb-6">
+          {section.title && (
+            <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3 px-2">
+              {section.title}
+            </div>
           )}
-        >
-          <link.icon
-            className={twMerge(
-              "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
-            )}
-          />
-          <span>{link.label}</span>
-        </Link>
+          <div className="space-y-1">
+            {section.items.map((link: Navlink) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => isMobile() && setOpen(false)}
+                className={twMerge(
+                  "text-secondary hover:text-primary transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group",
+                  isActive(link.href) && "bg-white shadow-lg text-primary"
+                )}
+                {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                <div className="flex items-center space-x-4">
+                  <link.icon
+                    className={twMerge(
+                      "h-4 w-4 flex-shrink-0",
+                      isActive(link.href) && "text-sky-500"
+                    )}
+                    size={16}
+                    theme={isActive(link.href) ? "filled" : "outline"}
+                  />
+                  <span>{link.label}</span>
+                </div>
+                {link.external && (
+                  <Right className="h-3 w-3 text-neutral-400 group-hover:text-neutral-600 transition-colors" />
+                )}
+              </Link>
+            ))}
+          </div>
+        </div>
       ))}
 
-      <Heading as="p" className="text-sm md:text-sm lg:text-sm pt-10 px-2">
-        Socials
-      </Heading>
-      {socials.map((link: Navlink) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
-          )}
-        >
-          <link.icon
-            className={twMerge(
-              "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
-            )}
-          />
-          <span>{link.label}</span>
-        </Link>
-      ))}
+      <div className="mb-6">
+        <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3 px-2">
+          Online
+        </div>
+        <div className="space-y-1">
+          {socials.map((link: Navlink) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={twMerge(
+                "text-secondary hover:text-primary transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group"
+              )}
+            >
+              <div className="flex items-center space-x-3">
+                <link.icon
+                  className="h-4 w-4 flex-shrink-0"
+                  theme="outline"
+                  size={16}
+                />
+                <span>{link.label}</span>
+              </div>
+              <Right className="h-3 w-3 text-neutral-400 group-hover:text-neutral-600 transition-colors" />
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

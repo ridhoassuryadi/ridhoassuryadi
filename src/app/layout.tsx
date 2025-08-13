@@ -1,13 +1,20 @@
 import { Sidebar } from "@/components/Sidebar";
 import "./css/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { Footer } from "@/components/Footer";
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
+});
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -26,6 +33,8 @@ export default function RootLayout({
       <body
         className={twMerge(
           inter.className,
+          lora.variable,
+          inter.variable,
           "flex antialiased h-screen overflow-hidden bg-gray-100"
         )}
       >

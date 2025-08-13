@@ -1,35 +1,90 @@
 import {
-  IconArticle,
-  IconBolt,
-  IconBriefcase2,
-  IconMail,
-  IconMessage2,
-} from "@tabler/icons-react";
+  Home,
+  Write,
+  Bookmark,
+  MessageOne,
+  Tool,
+  Computer,
+  GraphicDesignTwo,
+  UserToUserTransmission,
+  Components,
+  Shield,
+  ApplicationMenu,
+} from "@icon-park/react";
 
-export const navlinks = [
+export const navigationSections = [
   {
-    href: "/",
-    label: "Home",
-    icon: IconBolt,
+    items: [
+      {
+        href: "/",
+        label: "Home",
+        icon: Home,
+      },
+      {
+        href: "/writing",
+        label: "Writing",
+        icon: Write,
+      },
+    ]
   },
   {
-    href: "/about",
-    label: "About",
-    icon: IconMessage2,
+    title: "Me",
+    items: [
+      {
+        href: "/bookmarks",
+        label: "Bookmarks",
+        icon: Bookmark,
+      },
+      {
+        href: "/ama",
+        label: "AMA",
+        icon: MessageOne,
+      },
+      {
+        href: "/stack",
+        label: "Stack",
+        icon: Tool,
+      },
+    ]
   },
   {
-    href: "/projects",
-    label: "Projects",
-    icon: IconBriefcase2,
-  },
-  {
-    href: "/blog",
-    label: "Articles",
-    icon: IconArticle,
-  },
-  {
-    href: "/contact",
-    label: "Contact",
-    icon: IconMail,
-  },
+    title: "Projects",
+    items: [
+      {
+        href: "https://raizora.com",
+        label: "Raizora",
+        icon: Computer,
+        external: true,
+      },
+      {
+        href: "https://himajinhobby.com",
+        label: "HimajinHobby",
+        icon: GraphicDesignTwo,
+        external: true,
+      },
+      {
+        href: "https://treonstudio.com",
+        label: "TreonStudio",
+        icon: UserToUserTransmission,
+        external: true,
+      },
+      {
+        href: "https://gea-tourism.com",
+        label: "Gea Tourism",
+        icon: Components,
+        external: true,
+      },
+      {
+        href: "https://tempat-teduh.com",
+        label: "Tempat Teduh",
+        icon: Shield,
+        external: true,
+      },
+      {
+        href: "/app-dissection",
+        label: "Digital Crafteds",
+        icon: ApplicationMenu,
+      },
+    ]
+  }
 ];
