@@ -7,6 +7,9 @@ import Articles from "./components/articles";
 import Projects from "@/app/contact/page";
 import SideHustles from "./components/side-hustles";
 import Experience from "./components/experience";
+import { DATA } from "@/constants/resume";
+import { ResumeCard } from "./components/resume-card";
+import { ProjectCard } from "./components/project-card";
 
 export default function About() {
   const images = [
@@ -84,18 +87,49 @@ export default function About() {
         <Paragraph className=" mt-4">
           I am a highly motivated and enthusiastic person who enjoys taking on challenges and achieving personal goals. I am adaptable, responsible, hardworking, and detail-oriented. I enjoy working on my own initiative or in a team.
         </Paragraph>
-        <Paragraph className=" mt-4">
-          Throughout my journey, I&apos;ve discovered that the intersection of engineering and design creates the most impactful solutions. Whether I&apos;m leading engineering teams, building design systems, or founding new ventures, I always strive to create products that are both technically excellent and beautifully designed.
-        </Paragraph>
-        <Paragraph className=" mt-4">
-          Please read through my profile, and I look forward to collaborating with you! Feel free to reach out if you&apos;d like to discuss technology, design, leadership, or potential opportunities to work together.
-        </Paragraph>
-        <div className="mt-10"/>
+        <div className="mt-10" />
         <Articles />
-        <div className="mt-10"/>
+        <div className="mt-10" />
         <Experience />
-        <div className="mt-10"/>
+        <div className="mt-10" />
+        <div className="flex min-h-0 flex-col gap-y-6">
+          <h2 className="font-inter-tight text-lg font-semibold text-gray-800 mb-4">
+            Educations
+          </h2>
+          {DATA.education.map((education, id) => (
+            <ResumeCard
+              key={education.school}
+              href={education.href}
+              logoUrl={education.logoUrl}
+              altText={education.school}
+              title={education.school}
+              subtitle={education.degree}
+              period={`${education.start} - ${education.end}`}
+            />
+          ))}
+        </div>
+        <div className="mt-10" />
         <SideHustles />
+        <div className="mt-10" />
+        <h2 className="font-inter-tight text-lg font-semibold text-gray-800 mb-4">
+          Digital Works
+        </h2>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          {DATA.projects.map((project, id) => (
+            <ProjectCard
+              href={project.href}
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              dates={project.dates}
+              tags={project.technologies}
+              image={project.image}
+              video={project.video}
+              links={project.links}
+            />
+          ))}
+        </div>
+        <div className="mt-10" />
         <Projects />
       </div>
     </div>

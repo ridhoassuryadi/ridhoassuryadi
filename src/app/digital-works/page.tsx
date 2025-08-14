@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Projects | Ridho Assuryadi",
+  title: "Digital Works | Ridho Assuryadi",
   description:
     "Ridho Assuryadi is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
 };
