@@ -4,6 +4,7 @@ import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { Metadata } from "next";
+import Image from "next/image";
 
 import About from "@/features/about/about-page";
 
@@ -22,7 +23,12 @@ export default function AboutPage() {
   ];
   return (
     <Container>
-      <span className="text-4xl">💬</span>
+            <Image
+              src="/images/profile.webp"
+              alt="Avatar"
+              height="84"
+              width="84"
+            />
       <Heading className="font-black">About Me</Heading>
       <About />
     </Container>

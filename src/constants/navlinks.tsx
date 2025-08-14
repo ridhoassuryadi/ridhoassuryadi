@@ -4,13 +4,15 @@ import {
   Bookmark,
   MessageOne,
   Tool,
-  Computer,
-  GraphicDesignTwo,
-  UserToUserTransmission,
-  Components,
-  Shield,
-  ApplicationMenu,
 } from "@icon-park/react";
+import {
+  RaizoraIcon,
+  HimajinHobbyIcon,
+  TreonStudioIcon,
+  GeaTourismIcon,
+  TempatTeduhIcon,
+  DigitalCraftedsIcon,
+} from "@/components/icons/ProjectIcons";
 
 export const navigationSections = [
   {
@@ -31,14 +33,14 @@ export const navigationSections = [
     title: "Me",
     items: [
       {
+        href: "/about",
+        label: "About",
+        icon: MessageOne,
+      },
+      {
         href: "/bookmarks",
         label: "Bookmarks",
         icon: Bookmark,
-      },
-      {
-        href: "/ama",
-        label: "AMA",
-        icon: MessageOne,
       },
       {
         href: "/stack",
@@ -53,37 +55,37 @@ export const navigationSections = [
       {
         href: "https://raizora.com",
         label: "Raizora",
-        icon: Computer,
+        icon: RaizoraIcon,
         external: true,
       },
       {
         href: "https://himajinhobby.com",
         label: "HimajinHobby",
-        icon: GraphicDesignTwo,
+        icon: HimajinHobbyIcon,
         external: true,
       },
       {
         href: "https://treonstudio.com",
         label: "TreonStudio",
-        icon: UserToUserTransmission,
+        icon: TreonStudioIcon,
         external: true,
       },
       {
         href: "https://gea-tourism.com",
         label: "Gea Tourism",
-        icon: Components,
+        icon: GeaTourismIcon,
         external: true,
       },
       {
         href: "https://tempat-teduh.com",
         label: "Tempat Teduh",
-        icon: Shield,
+        icon: TempatTeduhIcon,
         external: true,
       },
       {
         href: "/app-dissection",
         label: "Digital Crafteds",
-        icon: ApplicationMenu,
+        icon: DigitalCraftedsIcon,
       },
     ]
   }

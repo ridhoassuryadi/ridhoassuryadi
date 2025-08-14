@@ -55,6 +55,18 @@ export const Navigation = ({
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
+  
+  // Check if icon is a custom SVG component (doesn't need theme prop)
+  const isCustomIcon = (icon: any) => {
+    return icon.name && (
+      icon.name.includes('RaizoraIcon') ||
+      icon.name.includes('HimajinHobbyIcon') ||
+      icon.name.includes('TreonStudioIcon') ||
+      icon.name.includes('GeaTourismIcon') ||
+      icon.name.includes('TempatTeduhIcon') ||
+      icon.name.includes('DigitalCraftedsIcon')
+    );
+  };
 
   return (
     <div className="flex flex-col my-10 relative z-[100]">
@@ -72,8 +84,8 @@ export const Navigation = ({
                 href={link.href}
                 onClick={() => isMobile() && setOpen(false)}
                 className={twMerge(
-                  "text-secondary hover:text-primary transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group",
-                  isActive(link.href) && "bg-white shadow-lg text-primary"
+                  "text-neutral-600 hover:text-white hover:bg-neutral-800 transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group",
+                  isActive(link.href) && "bg-neutral-900 text-white"
                 )}
                 {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
               >
@@ -81,15 +93,17 @@ export const Navigation = ({
                   <link.icon
                     className={twMerge(
                       "h-4 w-4 flex-shrink-0",
-                      isActive(link.href) && "text-sky-500"
+                      isActive(link.href) ? "text-white" : "text-neutral-600 group-hover:text-white"
                     )}
                     size={16}
-                    theme={isActive(link.href) ? "filled" : "outline"}
+                    {...(!isCustomIcon(link.icon) && {
+                      theme: isActive(link.href) ? "filled" : "outline"
+                    })}
                   />
                   <span>{link.label}</span>
                 </div>
                 {link.external && (
-                  <Right className="h-3 w-3 text-neutral-400 group-hover:text-neutral-600 transition-colors" />
+                  <Right className="h-3 w-3 text-neutral-400 group-hover:text-white transition-colors" />
                 )}
               </Link>
             ))}
@@ -109,18 +123,18 @@ export const Navigation = ({
               target="_blank"
               rel="noopener noreferrer"
               className={twMerge(
-                "text-secondary hover:text-primary transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group"
+                "text-neutral-600 hover:text-white hover:bg-neutral-800 transition duration-200 flex items-center justify-between py-2 px-2 rounded-md text-sm group"
               )}
             >
               <div className="flex items-center space-x-3">
                 <link.icon
-                  className="h-4 w-4 flex-shrink-0"
+                  className="h-4 w-4 flex-shrink-0 text-neutral-600 group-hover:text-white"
                   theme="outline"
                   size={16}
                 />
                 <span>{link.label}</span>
               </div>
-              <Right className="h-3 w-3 text-neutral-400 group-hover:text-neutral-600 transition-colors" />
+              <Right className="h-3 w-3 text-neutral-400 group-hover:text-white transition-colors" />
             </Link>
           ))}
         </div>
@@ -133,15 +147,15 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="https://media.licdn.com/dms/image/v2/C5103AQFgfmcBrP3gZw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1545184414096?e=1757548800&v=beta&t=wQnKYsEUTey4S9qap6R8t0P0GwcWvJwLsYnkK4vHZVk"
+        src="/images/profile.webp"
         alt="Avatar"
         height="40"
         width="40"
         className="object-cover object-top rounded-full flex-shrink-0"
       />
       <div className="flex text-sm flex-col">
-        <p className="font-bold text-primary">Ridho</p>
-        <p className="font-light text-secondary">Assuryadi</p>
+        <p className="font-bold text-primary">Ridho A.</p>
+        <p className="font-light text-secondary">Software Designer</p>
       </div>
     </div>
   );

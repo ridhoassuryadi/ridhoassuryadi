@@ -2,10 +2,10 @@ import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
-import { Products } from "@/components/Products";
 import { getAllBlogs } from "../../../lib/getAllBlogs";
 import { Blogs } from "@/components/Blogs";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Writing | Ridho Assuryadi",
@@ -19,8 +19,13 @@ export default async function Blog() {
 
   return (
     <Container>
-      <span className="text-4xl">📝</span>
-      <Heading className="font-black pb-4">I write about technology</Heading>
+      <Image
+        src="/images/writing.svg"
+        alt="Avatar"
+        height="84"
+        width="84"
+      />
+      <Heading className="font-black pb-4 mt-2">I write about technology</Heading>
       <Paragraph className="pb-10">
         Ever since <Highlight> I was a kid</Highlight>, I&apos;ve been
         fascinated by technology.

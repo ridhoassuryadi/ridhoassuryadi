@@ -9,7 +9,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <Container>
-      <span className="text-4xl">👋</span>
+      <Image
+        src="/images/hello.png"
+        alt="Avatar"
+        height="84"
+        width="84"
+      />
       <Heading className="font-black">Hello there! I&apos;m Ridho</Heading>
       <Paragraph className="max-w-xl mt-4">
         I&apos;m a full-stack developer that loves{" "}
