@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <Container>
             <Image
-              src="/images/profile.webp"
+              src="https://is3.cloudhost.id/ridhoassuryadi/profile.webp"
               alt="Avatar"
               height="84"
               width="84"

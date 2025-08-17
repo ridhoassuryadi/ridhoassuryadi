@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Container>
       <Image
-        src="/images/hello.png"
+        src="https://is3.cloudhost.id/ridhoassuryadi/hello.png"
         alt="Avatar"
         height="84"
         width="84"

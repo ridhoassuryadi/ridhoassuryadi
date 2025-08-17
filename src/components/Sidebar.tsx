@@ -147,7 +147,7 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="/images/profile.webp"
+        src="https://is3.cloudhost.id/ridhoassuryadi/profile.webp"
         alt="Avatar"
         height="40"
         width="40"
