@@ -1,0 +1,67 @@
+---
+import SectionDesc from "@/features/home/components/SectionDesc";
+const faqs = [
+  {
+    question: "What are the core values of Treon Studio?",
+    answer:
+      "Behind every success at Treon Studio are values that guide our journey: Human-Centered Solutions, Practical Innovation, Growth Mindset, Partnership Priority, and Honest Communication.",
+  },
+  {
+    question: "What does human-centered solutions mean?",
+    answer:
+      "We believe the best technology is technology that understands you. Every design and development decision we make prioritizes user experience, ensuring our solutions are intuitive and effective.",
+  },
+  {
+    question: "How does Treon Studio innovate?",
+    answer:
+      "Innovation must be relevant. We recommend technologies that truly support your business goals and user needs.",
+  },
+  {
+    question: "What is a growth mindset at Treon Studio?",
+    answer:
+      "The world is always changing, and so are we. We constantly learn and improve because every challenge is an opportunity to grow.",
+  },
+  {
+    question: "How does Treon Studio prioritize partnership?",
+    answer:
+      "Your success is our success. We work side by side with our clients, combining our technical expertise with a deep understanding of your business to create the most suitable solutions.",
+  },
+  {
+    question: "How does Treon Studio communicate?",
+    answer:
+      "Transparency is key. We will always tell you what you need to hear for our mutual success."
+  },
+];
+---
+
+<section>
+  <div class="md:px-8 px-1 py-12 mx-auto">
+    <SectionDesc client:load headingBadge="FAQ" title="Frequently Asked Questions" description="Have questions about our services, development process, or how we can help bring your vision to life? Find answers to the most common questions our clients ask about working with our studio."/>
+    <div
+      class="mt-8  rounded-3xl text-base-900 divide-y divide-base-100"
+    >
+      {
+        faqs.map((faq, i) => (
+          <details class="px-8 py-6 group">
+            <summary class="cursor-pointer text-sm font-medium  flex justify-between items-center">
+              {faq.question}
+              <svg
+                class="size-4 ml-2 transform transition-transform group-open:rotate-180"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0l-4.24-4.24a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </summary>
+            <p class="mt-2 text-xs text-base-600">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

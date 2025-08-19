@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@/shared/ui/layouts/BaseLayout.astro";
+import HeroBanner from "@/features/home/components/HeroBanner.astro";
+import Projects from "@/features/home/components/Projects";
+import { WorkExperience } from "@/features/home/components/WorkExperience";
+import { HowMeWorks } from "@/features/home/components/HowMeWorks";
+import Mindsets from "@/features/home/components/Mindsets.astro";
+import Testimonials from "@/features/home/components/Testimonials.astro";
+import Pricing from "@/features/home/components/Pricing.astro";
+import Faq from "@/features/home/components/Faq.astro";
+import Wrapper from "@/shared/ui/layouts/Wrapper.astro";
+import Galleries from "@/features/home/components/Galleries";
+import ProductCardStack from "@/features/home/components/ProductCardStack";
+import SectionDesc from "@/features/home/components/SectionDesc";
+import ReachUs from "@/features/home/components/ReachUs";
+import { getCollection } from "astro:content";
+const allProjects = await getCollection("projects");
+import { ScrollText } from "@/shared/ui/base/scroll-text";
+---
+<BaseLayout>
+    <HeroBanner />
+    <Wrapper variant="standard" class="overflow-hidden max-h-[32rem]">
+      <ScrollText
+      client:load
+      className="text-base-600 mt-2"
+      text={"I'm a Software Engineer who loves design. I'm currently working as an Engineering Manager at Red Ant Colony and Co-Founder at Raizora. Previously, I was building Design Systems at Ruangguru and crafting amazing things at Ruangkerja, an LMS for training companies and organizations. I started my career as a Designer right after graduating from senior high school. After 1 year, I decided to join a coding bootcamp. After that, I entered the world of IT as a software enginee"} />
+
+      <ScrollText
+      client:load
+      className="text-base-600 mt-2"
+      text={"I have worked with many startups, and I'm grateful to have had opportunities to lead and grow teams starting from the early stage of my career. I am a highly motivated and enthusiastic person who enjoys taking on challenges and achieving personal goals. I am adaptable, responsible, hardworking, and detail-oriented. I enjoy working on my own initiative or in a team."} />
+
+      <Galleries client:load />
+    </Wrapper>
+    <Wrapper variant="standard" class="py-24" id="work">
+      <SectionDesc client:load title="What I Build..." description="As a Software Designer and Full Stack Developer, I create digital solutions that bridge the gap between innovative ideas and real-world applications. From modern web applications built with React and Next.js to mobile apps that deliver exceptional user experiences, each project represents a fusion of technical expertise and thoughtful design. I specialize in transforming complex requirements into intuitive interfaces, ensuring every line of code serves both functionality and user delight. Whether it's a startup's first MVP or an enterprise-level system, I approach each challenge with the same dedication to quality and attention to detail that defines great software craftsmanship." iconUrl="/icons/rocket.svg"/>
+      <ProductCardStack products={allProjects}/>
+    </Wrapper>
+    <Wrapper variant="standard" class="py-24">
+      <SectionDesc client:load title="What my journey..." description="As a Software Designer and Full Stack Developer, my approach is rooted in the belief that technology should enhance human capabilities, not complicate them. I'm driven by the challenge of transforming complex technical requirements into elegant, user-centered solutions." iconUrl="/icons/paper-plane.svg"/>
+      <WorkExperience client:load />
+    </Wrapper>
+    <div class="py-24 max-w-7xl mx-auto">
+      <SectionDesc client:load title="What Drives Me..." description="" iconUrl="/icons/sticker.svg"/>
+      <HowMeWorks client:load />
+    </div>
+    <div class="relative">
+      <Wrapper variant="standard" class="py-[12rem] md:py-12">
+      <SectionDesc client:load  title="What We Make..." description="Technology becomes truly meaningful when it touches lives beyond profit margins. We create solutions that ripple through communities—educational apps that bring quality learning to underserved regions, healthcare platforms that connect remote patients with specialists, and accessibility tools that ensure digital inclusion for everyone. Each line of code we write carries the potential to solve real human challenges, bridge social gaps, and create opportunities where none existed before. Through open-source contributions and community-driven initiatives, we ensure our innovations reach those who need them most. Because the greatest measure of our success isn't just revenue—it's the positive change we spark in society."/>
+      <Projects client:load />
+      </Wrapper>
+    </div>
+    <Wrapper variant="standard" class="py-24" id="contact">
+      <Faq />
+    </Wrapper>
+</BaseLayout>

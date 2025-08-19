@@ -1,0 +1,25 @@
+---
+// Fundations
+import BaseLayout from "@/shared/ui/layouts/BaseLayout.astro";
+import Text from "@/shared/ui/base/Text.astro";
+import Wrapper from "@/shared/ui/layouts/Wrapper.astro";
+// Components
+import ProjectEntries2 from "@/components/projects/ProjectEntries2.astro";
+// Content
+import { getCollection } from "astro:content";
+const allProjects = await getCollection("projects");
+---
+
+  <section>
+    <Wrapper class="">
+      <div class="text-left">
+        <p class="text-2xl italic tracking-wide text-base-900   font-display ">
+            Products
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-6">
+        {allProjects.map((post) => <ProjectEntries2 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>

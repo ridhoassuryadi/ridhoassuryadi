@@ -1,0 +1,407 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar-hide";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-base-50: oklch(96.74% 0.001 286.38);
+  --color-base-100: oklch(93.73% 0.001 286.37);
+  --color-base-200: oklch(87.31% 0.004 271.36);
+  --color-base-300: oklch(80.82% 0.006 274.95);
+  --color-base-400: oklch(74.22% 0.009 278.59);
+  --color-base-500: oklch(67.48% 0.012 280.37);
+  --color-base-600: oklch(56.83% 0.015 281.34);
+  --color-base-700: oklch(46.56% 0.011 279.46);
+  --color-base-800: oklch(35.42% 0.009 285.95);
+  --color-base-900: oklch(23.48% 0.004 264.49);
+  --color-base-950: oklch(16.89% 0.002 286.18);
+}
+
+
+@theme {
+  /* Typography */
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Instrument Serif", Georgia, Cambria, "Times New Roman", Times,
+    serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Colors */
+  --color-white: #f6f6f4;
+  --color-accent-50: oklch(0.986 0.031 120.757);
+  --color-accent-100: oklch(0.967 0.067 122.328);
+  --color-accent-200: oklch(0.938 0.127 124.321);
+  --color-accent-300: oklch(0.897 0.196 126.665);
+  --color-accent-400: oklch(0.841 0.238 128.85);
+  --color-accent-500: oklch(0.768 0.233 130.85);
+  --color-accent-600: oklch(0.648 0.2 131.684);
+  --color-accent-700: oklch(0.532 0.157 131.589);
+  --color-accent-800: oklch(0.453 0.124 130.933);
+  --color-accent-900: oklch(0.405 0.101 131.063);
+  --color-accent-950: oklch(0.274 0.072 132.109);
+  --color-base-50: oklch(0.985 0 0);
+  --color-base-100: oklch(0.967 0.001 286.375);
+  --color-base-200: oklch(0.92 0.004 286.32);
+  --color-base-300: oklch(0.871 0.006 286.286);
+  --color-base-400: oklch(0.705 0.015 286.067);
+  --color-base-500: oklch(0.552 0.016 285.938);
+  --color-base-600: oklch(0.442 0.017 285.786);
+  --color-base-700: oklch(0.37 0.013 285.805);
+  --color-base-800: oklch(0.274 0.006 286.033);
+  --color-base-900: oklch(0.21 0.006 285.885);
+  --color-base-950: oklch(0.141 0.005 285.823);
+  /* Keyframes */
+  --animate-marquee: marquee 12s linear infinite;
+  --animate-rightMarquee: rightMarquee 300s linear infinite;
+  --animate-slowMarquee: marquee 300s linear infinite;
+  --animate-verticalMarquee: vertical 30s linear infinite;
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes vertical {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes rightMarquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  /* Shadows */
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px -2px,
+    rgba(0, 0, 0, 0.1) 0px 2px 2px -1px,
+    rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+    --shadow-dark: 0 -2px 6px hsla(0, 0%, 100%, 0.17),
+    0 5px 18px rgba(0, 0, 0, 0.4), 0 4px 40px 8px rgba(0, 0, 0, 0.4),
+    0 1px 4px -1px rgba(0, 0, 0, 0.302),
+    inset 0 0 0 0.3px hsla(0, 0%, 100%, 0.3), 0 0 0 0.5px hsla(0, 0%, 100%, 0.4);
+  --shadow-light: 0 -2px 6px hsla(0, 0%, 100%, 0.01),
+    0 5px 18px rgba(0, 0, 0, 0.05), 0 4px 40px 8px rgba(0, 0, 0, 0.05),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 0.3px hsla(0, 0%, 100%, 0.02),
+    0 0 0 0.1px hsla(0, 0%, 100%, 0.05);
+}
+
+:root {
+  --astro-code-foreground: theme(colors.base.700);
+  --astro-code-background: theme(colors.base.100);
+
+  --astro-code-token-punctuation: var(--color-lime-600);
+  --astro-code-token-parameter: var(--color-purple-600);
+  --astro-code-token-line-number: theme(colors.base.500);
+  --astro-code-token-comment: theme(colors.base.500);
+  --astro-code-token-cdata: var(--color-purple-600);
+  --astro-code-token-constant: var(--color-lime-600);
+  --astro-code-token-function: var(--color-lime-600);
+  --astro-code-token-attr-name: var(--color-lime-600);
+  --astro-code-token-builtin: var(--color-purple-600);
+  --astro-code-token-boolean: var(--color-lime-600);
+  --astro-code-token-class-name: var(--color-purple-600);
+  --astro-code-token-property: var(--color-lime-600);
+  --astro-code-token-selector: var(--color-lime-600);
+  --astro-code-token-string: var(--color-purple-600);
+  --astro-code-token-string-expression: var(--color-lime-600);
+  --astro-code-token-variable: var(--color-lime-600);
+  --astro-code-token-keyword: var(--color-purple-600);
+  --astro-code-token-symbol: var(--color-lime-600);
+  --astro-code-token-number: var(--color-lime-600);
+  --astro-code-token-operator: var(--color-lime-600);
+  --astro-code-token-deleted: var(--color-purple-600);
+  --astro-code-token-changed: var(--color-purple-600);
+  --astro-code-token-important: var(--color-lime-600);
+  --astro-code-token-tag: var(--color-purple-600);
+  --astro-code-token-inserted: var(--color-lime-600);
+  --astro-code-token-namespace: var(--color-purple-600);
+  --astro-code-token-atrule: var(--color-purple-600);
+  --astro-code-token-entity: var(--color-lime-600);
+  --astro-code-token-highlight: theme(colors.base.200);
+  --astro-code-token-alert: var(--color-lime-600);
+  --astro-code-token-emphasis: var(--color-purple-600);
+  --astro-code-token-focus: var(--color-lime-600);
+  --astro-code-token-notice: var(--color-lime-600);
+  --astro-code-token-attr-value: var(--color-purple-600);
+  --astro-code-token-regex: var(--color-purple-600);
+  --astro-code-token-doctype: var(--color-purple-600);
+  --astro-code-token-prolog: var(--color-purple-600);
+  --astro-code-token-bold: inherit;
+  --astro-code-token-underline: underline;
+
+  --kp1xfjf: 246, 246, 244;
+  --kp1xfjp: var(--font-inter, Inter, sans-serif);
+}
+
+
+:root.dark {
+/* Shiki code style */
+--astro-code-foreground: theme(colors.base.500);
+--astro-code-background: theme(colors.base.950);
+--astro-code-token-punctuation: var(--color-lime-300); /* lime-300 for punctuation */
+--astro-code-token-parameter: var(--color-purple-300); /* Purple-300 for parameters */
+--astro-code-token-line-number: theme(colors.base.400);
+--astro-code-token-comment: theme(
+  colors.base.700
+); /* Muted purple-300 for comments */
+--astro-code-token-cdata: var(
+  --color-purple-300
+); /* Same as parameter for consistency */
+--astro-code-token-constant: var(--color-lime-300); /* lime-300 for constants */
+--astro-code-token-function: var(
+  --color-lime-300
+); /* Brighter lime-300 for functions */
+--astro-code-token-attr-name: var(--color-lime-300); /* Attribute names in lime-300 */
+--astro-code-token-builtin: var(
+  --color-purple-300
+); /* Subtle distinction for built-ins */
+--astro-code-token-boolean: var(--color-lime-300); /* Similar to constants */
+--astro-code-token-class-name: var(
+  --color-purple-300
+); /* Purple-300 for class names */
+--astro-code-token-property: var(--color-lime-300); /* lime-300 for properties */
+--astro-code-token-selector: var(--color-lime-300); /* lime-300 for selectors */
+--astro-code-token-string: var(
+  --color-purple-300
+); /* Slight contrast for strings */
+--astro-code-token-string-expression: var(
+  --color-lime-300
+); /* Match other text tokens */
+--astro-code-token-variable: var(--color-lime-300); /* lime-300 for variables */
+--astro-code-token-keyword: var(--color-purple-300); /* Purple-300 for keywords */
+--astro-code-token-symbol: var(--color-lime-300); /* Match text for consistency */
+--astro-code-token-number: var(--color-lime-300); /* lime-300 for numbers */
+--astro-code-token-operator: var(--color-lime-300); /* Slightly lighter lime-300 */
+--astro-code-token-deleted: var(
+  --color-purple-300
+); /* Dim purple-300 for deleted tokens */
+--astro-code-token-changed: var(
+  --color-purple-300
+); /* Medium purple-300 for changes */
+--astro-code-token-important: var(
+  --color-lime-300
+); /* Bright lime-300 for important text */
+--astro-code-token-tag: var(--color-purple-300); /* Slightly lighter for tags */
+--astro-code-token-inserted: var(--color-lime-300); /* lime-300 for inserted text */
+--astro-code-token-namespace: var(--color-purple-300); /* Consistent with tags */
+--astro-code-token-atrule: var(--color-purple-300); /* Same as namespace */
+--astro-code-token-entity: var(--color-lime-300); /* Match other identifiers */
+--astro-code-token-highlight: theme(colors.base.700);
+--astro-code-token-alert: var(--color-lime-300); /* Bright lime-300 for alerts */
+--astro-code-token-emphasis: var(
+  --color-purple-300
+); /* Mid-tone purple-300 for emphasis */
+--astro-code-token-focus: var(
+  --color-lime-300
+); /* Bright lime-300 for focused elements */
+--astro-code-token-notice: var(
+  --color-lime-300
+); /* Match other noticeable elements */
+--astro-code-token-attr-value: var(--color-purple-300); /* Same as strings */
+--astro-code-token-regex: var(--color-purple-300); /* Consistent with strings */
+--astro-code-token-doctype: var(--color-purple-300); /* Muted for doctype */
+--astro-code-token-prolog: var(--color-purple-300); /* Same as comments */
+--astro-code-token-bold: inherit;
+--astro-code-token-: ;
+--astro-code-token-underline: underline;
+}
+
+
+.marquee-container {
+  position: relative;
+  width: 588px;
+  height: 187px;
+}
+
+.marquee-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 15%;
+  background-color: black;
+  offset-path: path(
+    "M0 186.219C138.5 186.219 305.5 194.719 305.5 49.7188C305.5 -113.652 -75 186.219 484.5 186.219H587.5"
+  );
+  offset-rotate: auto;
+  animation: moveAlong 6s linear infinite;
+}
+
+@keyframes moveAlong {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
+.bg-inner-color {
+  background-color: #f7f0ec;
+}
+
+.blur-item-1 {
+  background-color: rgba(246, 246, 244, .3);
+  position: absolute;
+  inset: 0;
+  -webkit-backdrop-filter: blur(.625rem);
+    backdrop-filter: blur(.625rem);
+    -webkit-mask: linear-gradient(180deg, transparent 76%, rgb(var(--kp1xfjf)) 100%) add;
+    mask: linear-gradient(180deg, transparent 76%, rgb(var(--kp1xfjf)) 100%) add;
+}
+
+.blur-item-2 {
+  background-color: rgba(246, 246, 244, .3);
+    position: absolute;
+    inset: 0;
+  -webkit-backdrop-filter: blur(.3125rem);
+    backdrop-filter: blur(.3125rem);
+    -webkit-mask: linear-gradient(180deg, transparent 50%, rgb(var(--kp1xfjf)) 75%) add;
+    mask: linear-gradient(180deg, transparent 50%, rgb(var(--kp1xfjf)) 75%) add;
+}
+
+.text-heading-section {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.heading-badge {
+  display: block;
+  padding: .25rem .75rem;
+  margin-inline: auto;
+  font: 500 .8125rem / 1.25rem var(--kp1xfjp);
+  background-color: rgb(var(--kp1xfj0));
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+  box-shadow: 0 .5rem .5rem -.25rem rgba(0, 0, 0, .02), 0 .25rem .25rem -.125rem rgba(0, 0, 0, .03), 0 .1875rem .1875rem -.09375rem rgba(27, 27, 27, .03), 0 .125rem .125rem -.0625rem rgba(0, 0, 0, .04), 0 .03125rem .0625rem 0 rgba(0, 0, 0, .06), 0 0 0 .0625rem rgba(0, 0, 0, .04), inset 0 -.0625rem .03125rem 0 rgba(0, 0, 0, .04);
+  background-color: white;
+}
+
+.border-x {
+  border-inline-style: var(--tw-border-style);
+  border-inline-width: 1px;
+}
+
+.button-emboss {
+  background-color: #201410;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 3px 2px inset, rgba(255, 255, 255, 0.125) 0px 0px 12px 4px inset, rgba(0, 0, 0, 0.5) 0px 4px 3px -4px;
+}
+
+.button-orange-emboss {
+  background-color: #ff5941;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 3px 2px inset, rgba(255, 255, 255, 0.125) 0px 0px 12px 4px inset, rgba(0, 0, 0, 0.5) 0px 4px 3px -4px;
+}
+
+.nav-wrapper {
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+}
+
+.main-section {
+  box-shadow: 0 .5rem .5rem -.25rem rgba(0,0,0,.02),0 .25rem .25rem -.125rem rgba(0,0,0,.03),0 .1875rem .1875rem -.09375rem rgba(27,27,27,.03),0 .125rem .125rem -.0625rem rgba(0,0,0,.04),0 .03125rem .0625rem 0 rgba(0,0,0,.06),0 0 0 .0625rem rgba(0,0,0,.04),inset 0 -.0625rem .03125rem 0 rgba(0,0,0,.04);
+}
+
+.section-card {
+  box-shadow: 0 .5rem .5rem -.25rem rgba(0,0,0,.02),0 .25rem .25rem -.125rem rgba(0,0,0,.03),0 .1875rem .1875rem -.09375rem rgba(27,27,27,.03),0 .125rem .125rem -.0625rem rgba(0,0,0,.04),0 .03125rem .0625rem 0 rgba(0,0,0,.06),0 0 0 .0625rem rgba(0,0,0,.04),inset 0 -.0625rem .03125rem 0 rgba(0,0,0,.04);
+  background-color: #f5f5f5;
+}
+
+.bg-radial-grey {
+  background-color: rgb(216, 216, 216);
+  color: var(--color-text-dark);
+  box-shadow: 
+color-mix(in srgb, rgb(255, 255, 255), transparent) 0px 0px 3em 0.5em inset;
+}
+
+.bg-radial-black {
+  background-color: #191B18;
+    color: var(--color-text-light);
+    box-shadow: 
+ color-mix(in srgb, rgb(255, 255, 255) 30%, transparent) 0px 0px 3em 0.5em inset;
+}
+
+.bg-radial-blue {
+  background-color: rgb(215 221 244);
+    color: var(--color-text-dark);
+    box-shadow: 
+ color-mix(in srgb, rgb(255, 255, 255), transparent) 0px 0px 3em 0.5em inset;
+}
+
+.bg-radial-green {
+  background-color: rgb(190 236 201);
+    color: var(--color-text-dark);
+    box-shadow: 
+ color-mix(in srgb, rgb(255, 255, 255), transparent) 0px 0px 3em 0.5em inset;
+}
+
+.bg-radial-red {
+  background-color: rgb(255 212 212);
+    color: var(--color-text-dark);
+    box-shadow: 
+ color-mix(in srgb, rgb(255, 255, 255), transparent) 0px 0px 3em 0.5em inset;
+}
+
+
+.bg-glass-mirror {
+  backdrop-filter: blur(4px);
+  box-shadow: rgba(255, 255, 255, 0.95) 0px 0px 1em 0.25em inset, rgba(0, 0, 0, 0.2) 0px 0.125em 0.125em -0.125em;
+  margin: 0px auto;
+  background: var(--header-fill);
+  /* padding: var(--padding); */
+  /* border-radius: clamp(1em, calc(calc(var(--padding) * 2 + 3.5em) / 2), 2.25em); */
+  transition: box-shadow 0.25s ease-out, gap 0.25s ease-out, padding 0.25s ease-out, border-radius 0.25s ease-out, background 0.25s ease-out, backdrop-filter 0.5s ease-out;
+  --header-fill: rgba(255, 255, 255, .25);
+  border: 0;
+}
+
+.rounded-image-product {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  object-fit: cover;
+  min-height: 60vh;
+}
+
+.bg-item-navigation {
+  background-color: oklch(0.92 0 0 / 0.21);
+}
+
+@theme inline {
+  --animate-shiny-text: shiny-text 8s infinite;
+ 
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Instrument Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-family-iserif {
+  font-family: "Instrument Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+}

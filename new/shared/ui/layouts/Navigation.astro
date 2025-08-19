@@ -1,0 +1,44 @@
+---
+import Home from "@/shared/images/navigations/home.png";
+import Info from "@/shared/images/navigations/info.png";
+import Notes from "@/shared/images/navigations/notes.png";
+import { Image } from "astro:assets";
+import { InteractiveHoverButton } from "@/shared/ui/base/interactive-button";
+---
+
+<div class="fixed bottom-10 inset-x-0 z-[9999] px-8">
+  <div
+    class="w-fit mx-auto flex items-center gap-1 justify-between py-2 px-4  rounded-full shadow-lg outline outline-base-100 bg-glass-mirror nav-wrapper"
+  >
+    <a class="text-base-900" href="/">
+      <div class="h-12 w-12 rounded-full bg-item-navigation flex items-center justify-center justify-center">
+        <Image
+        src={Home}
+        alt="Logo"
+        width={34}
+        height={34}
+        class="duration-300 rounded-xl group-hover:-rotate-45"
+      />
+      </div>
+    </a>
+    <div class="flex items-center gap-1 text-xs font-medium">
+      <!-- <a
+        href="https://lexingtonthemes.com/"
+        class="button-emboss px-8 py-3 text-base-500 hover: text-base-900 rounded-full text-white text-sm"
+      >
+        Book a call  →</a
+      > -->
+        <InteractiveHoverButton text="Book a call" />
+      <a class="text-base-900" href="/notes">
+        <div class="h-12 w-12 rounded-full bg-item-navigation">
+          <Image src={Notes} alt="" width={48} height={48} />
+        </div>
+      </a>
+      <a class="text-base-900" href="/now">
+        <div class="h-12 w-12 rounded-full bg-item-navigation">
+          <Image src={Info} alt="" width={48} height={48} />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

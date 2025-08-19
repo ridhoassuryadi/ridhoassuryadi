@@ -1,0 +1,64 @@
+---
+import Text from "@/shared/ui/base/Text.astro";
+import { Image } from "astro:assets";
+import Wrapper from "@/shared/ui/layouts/Wrapper.astro";
+import { ScrollText } from "../../../shared/ui/base/scroll-text"
+
+import { AnimatedShinyText } from "../../../shared/ui/base/animated-shiny-text"
+---
+
+<section class="overflow-hidden relative">
+  <Wrapper variant="standard">
+    <div class="py-12 mx-auto relative">
+      <div class="text-center">
+        <div class="mt-8 text-base-900 text-balance">
+          <Text
+            tag="h1"
+            variant="displayXL"
+            class="flex items-baseline justify-center gap-3 font-medium"
+          >
+            Your Partner
+            <Image
+              width={400}
+              height={200}
+              src={"https://is3.cloudhost.id/treon/treon.gif"}
+              alt="#_"
+              class="size-12 rounded-xl md:size-16 hover:scale-150 duration-300 hover:rotate-6 ease-in-out"
+            />
+          </Text>
+          <Text
+            tag="p"
+            variant="displayXL"
+            class="italic tracking-wide font-display dark:text-base-400 text-base-600"
+          >
+            Digital Business
+          </Text>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 text-base text-base-600 lg:grid-cols-2 w-full gap-8 group h-full mt-12"
+      >
+        <p>
+          Minimal streamlines the design process with a fixed monthly rate and
+          limitless design requests.
+        </p>
+        <p>
+          Say goodbye to phone calls and extensive contracts; reach out to minimal
+          directly at any time.
+        </p>
+        
+      </div>
+      <p class="text-sm italic text-base-600 mt-8 mb-12">
+        Embrace flexibility, halt or terminate your subscription whenever you
+        need. <span class="block text-base-900">⏤ No questions asked.</span>
+      </p>
+  
+      <ScrollText client:load text="At Treon Studio, our story began with a simple belief: every business has the potential to shine, and technology is the bridge that helps unlock that potential. We started this journey not just to build software, but to walk alongside founders, dreamers, and leaders — supporting each step as you grow and adapt in a digital world that never stands still. Our purpose is to empower you with thoughtful, future-ready solutions, so your business can thrive with confidence."></ScrollText>
+      <ScrollText client:load text="We imagine a future where every SME, startup, and established business can confidently navigate the digital landscape. Our vision is to become a trusted beacon of innovation — a partner who delivers not just smart technology, but real impact. By building a strong digital ecosystem together, we aim to drive meaningful transformation and lasting growth, so your success story continues for years to come."></ScrollText>
+  
+  
+  
+    </div>
+  </Wrapper>
+
+</section>
