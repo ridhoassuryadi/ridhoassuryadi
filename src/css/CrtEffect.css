@@ -1,0 +1,477 @@
+/* ============================================
+   CRT EFFECT - Adapted from crt-terminal
+   https://github.com/essserrr/crt-terminal
+   ============================================ */
+
+/* Variables */
+:root {
+  --crt-main-color: #d0fc7e;
+  --crt-secondary-color: #111010;
+  --crt-light-color: #fffcfc;
+  --crt-pixel-line-color: rgba(0, 0, 0, 0.35);
+  --crt-rgb-noise-r: rgba(255, 0, 0, 0.12);
+  --crt-rgb-noise-g: rgba(0, 255, 0, 0.08);
+  --crt-rgb-noise-b: rgba(0, 0, 255, 0.12);
+  --monitor-bezel-color: #2a2a2a;
+  --monitor-bezel-size: 25px;
+}
+
+/* ============================================
+   MONITOR FRAME STYLES - Classic Mac Style (Full Width)
+   ============================================ */
+
+.monitor-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.monitor-frame {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(121.79deg, #E7DFD0 0%, #DCD1BB 3.75%);
+  border-radius: 0;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+/* Inner bezel shadow */
+.monitor-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 50px;
+  background: #DCD1BB;
+  box-shadow:
+    inset 0px 100px 4px -8px rgba(0, 0, 0, 0.15),
+    inset 0px 0px 10px 6px #A29E96;
+  filter: blur(0.9px);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+/* Screen inner shadow */
+.monitor-frame::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 60px;
+  background: linear-gradient(119.8deg, #83868C 0%, #292D36 69.96%);
+  box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.42);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.monitor-bezel-top {
+  display: none;
+}
+
+.monitor-screen {
+  position: relative;
+  width: calc(100% - 10px);
+  height: calc(100vh - 90px);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 2;
+  /* This creates a new containing block for fixed positioned elements */
+  transform: translateZ(0);
+}
+
+.monitor-bezel-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #DCD1BB;
+  box-shadow:
+    0px -2px 4px rgba(0, 0, 0, 0.1),
+    inset 0px 4px 2px -2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.monitor-bezel-bottom::before {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: #DCD1BB;
+  box-shadow: inset 0px 0px 1px #000000;
+}
+
+/* Skeuomorphic Power button */
+.monitor-logo-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background-image: linear-gradient(to top, #B8AD99 0%, #CCC1AF 80%, #D5CAB8 100%);
+  border-radius: 50%;
+  border: 1px solid #9A8F7F;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.monitor-logo-btn::-moz-focus-inner {
+  border: 0;
+}
+
+.monitor-logo-btn > * {
+  transition: transform 0.2s ease;
+}
+
+.monitor-logo-btn:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.18),
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.monitor-logo-btn:hover > * {
+  transform: scale(0.975);
+}
+
+.monitor-logo-btn:focus:not(:active) {
+  outline: none;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 0 8px rgba(0, 200, 100, 0.5);
+}
+
+.monitor-logo-btn:active {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.monitor-logo-btn:active > * {
+  transform: scale(0.95);
+}
+
+.monitor-logo-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.monitor-logo-btn.powered-on svg {
+  filter: drop-shadow(0 0 3px rgba(0, 220, 100, 0.8));
+  animation: power-glow 2s ease-in-out infinite;
+}
+
+@keyframes power-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(0, 220, 100, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(0, 255, 120, 1));
+  }
+}
+
+/* Screen off state */
+.crt-screen-off {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: relative;
+}
+
+/* Subtle reflection on turned off screen */
+.crt-screen-off::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%
+  );
+}
+
+.monitor-power-led {
+  position: absolute;
+  right: 30px;
+  width: 8px;
+  height: 8px;
+  background: #00cc00;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #00cc00;
+  animation: led-blink 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.monitor-power-led.off {
+  background: #333;
+  box-shadow: none;
+  animation: none;
+}
+
+@keyframes led-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive adjustments - Hide bezel on mobile */
+@media screen and (max-width: 768px) {
+  .monitor-wrapper {
+    padding: 0;
+    background: transparent;
+  }
+
+  .monitor-frame {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    background: transparent;
+  }
+
+  .monitor-frame::before,
+  .monitor-frame::after {
+    display: none;
+  }
+
+  .monitor-screen {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .monitor-bezel-bottom {
+    display: none;
+  }
+
+  .crt-container,
+  .crt-content {
+    height: 100vh;
+  }
+}
+
+/* Container */
+.crt-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+  animation: screen-flicker 5s infinite;
+}
+
+/* Content wrapper */
+.crt-content {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px);
+  z-index: 1;
+}
+
+/* Overlay container */
+.crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Scanner - horizontal scanning line */
+.crt-scanner {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2.5rem;
+  opacity: 0.15;
+  background: linear-gradient(
+    180deg,
+    transparent 0,
+    var(--crt-light-color) 85%,
+    var(--crt-main-color) 85%,
+    transparent 100%
+  );
+  animation: scanner 6s linear infinite forwards;
+}
+
+/* Scanlines + RGB noise */
+.crt-scanlines {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  /* Pixel/scan lines - more visible */
+  background:
+    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 50%),
+    linear-gradient(90deg, var(--crt-rgb-noise-r), var(--crt-rgb-noise-g), var(--crt-rgb-noise-b));
+  background-position-y: 0.07rem;
+  background-size:
+    100% 2px,
+    3px 100%;
+  opacity: 0.6;
+  animation: scanline-flicker 0.1s infinite;
+}
+
+/* Vignette effect - darker edges */
+.crt-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.25) 90%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  box-shadow: inset 0 0 3rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Scanner animation - line moving down */
+@keyframes scanner {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Subtle flicker for scanlines */
+@keyframes scanline-flicker {
+  0% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.58;
+  }
+}
+
+/* Screen flicker effect */
+@keyframes screen-flicker {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  92% {
+    filter: brightness(1);
+  }
+  93% {
+    filter: brightness(0.97);
+  }
+  94% {
+    filter: brightness(1);
+  }
+}
+
+/* ============================================
+   CRT POWER-ON ANIMATION
+   TV turning on effect - like old CRT TV
+   1. White line expands horizontally first
+   2. Then expands vertically to reveal content
+   ============================================ */
+
+.crt-power-on-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  z-index: 999999;
+  animation: crt-black-fade 2s ease-out forwards;
+}
+
+/* White expanding element */
+.crt-power-on-overlay::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+  animation: crt-white-expand 0.5s ease-out forwards;
+}
+
+/* Black overlay - stays visible, then fades */
+@keyframes crt-black-fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* White expands: horizontal first, then vertical */
+@keyframes crt-white-expand {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  75% {
+    width: 100%;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,1386 @@
+/* ============================================
+   Mac OS 9 Style Override for All Windows
+   ============================================ */
+
+/* CSS Variables for Mac OS 9 Theme */
+:root {
+  --mac-border-size: 1px;
+  --mac-control-size: 12px;
+  --mac-padding-size: 4px;
+  --mac-frame-color: #dddddd;
+  --mac-border-color: #000000;
+  --mac-document-color: #ffffff;
+  --mac-system-01: #ffffff;
+  --mac-system-02: #eeeeee;
+  --mac-system-03: #cccccc;
+  --mac-system-04: #aaaaaa;
+  --mac-system-05: #888888;
+  --mac-system-06: #555555;
+  --mac-system-07: #333333;
+
+  /* Title bar stripe pattern */
+  --mac-title-pattern: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMS41MyAxMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmZ9LmNscy0ye2ZpbGw6Izc4Nzg3OH08L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNLS4yNCAwaDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMSIvPjxwYXRoIGQ9Ik0tLjI0IDFoMTIuMDF2MUgtLjI0eiIgY2xhc3M9ImNscy0yIi8+PHBhdGggZD0iTS0uMjQgMmgxMi4wMXYxSC0uMjR6IiBjbGFzcz0iY2xzLTEiLz48cGF0aCBkPSJNLS4yNCAzaDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMiIvPjxwYXRoIGQ9Ik0tLjI0IDRoMTIuMDF2MUgtLjI0eiIgY2xhc3M9ImNscy0xIi8+PHBhdGggZD0iTS0uMjQgNWgxMi4wMXYxSC0uMjR6IiBjbGFzcz0iY2xzLTIiLz48cGF0aCBkPSJNLS4yNCA2aDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMSIvPjxwYXRoIGQ9Ik0tLjI0IDdoMTIuMDF2MUgtLjI0eiIgY2xhc3M9ImNscy0yIi8+PHBhdGggZD0iTS0uMjQgOGgxMi4wMXYxSC0uMjR6IiBjbGFzcz0iY2xzLTEiLz48cGF0aCBkPSJNLS4yNCA5aDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMiIvPjxwYXRoIGQ9Ik0tLjI0IDEwaDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMSIvPjxwYXRoIGQ9Ik0tLjI0IDExaDEyLjAxdjFILS4yNHoiIGNsYXNzPSJjbHMtMiIvPjwvc3ZnPg==");
+
+  /* Title bar left edge pattern */
+  --mac-title-pattern-left: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDEyIj48cmVjdCB5PSIwIiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiM3ODc4Nzg7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjMiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjQiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjIiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6Izc4Nzg3ODsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB5PSI2IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEiIHk9IjciIHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiM3ODc4Nzg7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeT0iOCIgd2lkdGg9IjMiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIxIiB5PSI5IiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjEwIiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEiIHk9IjExIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjwvc3ZnPg==");
+
+  /* Title bar right edge pattern */
+  --mac-title-pattern-right: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDEyIj48cmVjdCB5PSIwIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjEiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiM3ODc4Nzg7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjIiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB5PSIzIiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjQiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeT0iNSIgd2lkdGg9IjMiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6Izc4Nzg3ODsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjciIHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiM3ODc4Nzg7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeT0iOCIgd2lkdGg9IjIiIGhlaWdodD0iMSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB5PSI5IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHk9IjExIiB3aWR0aD0iMyIgaGVpZ2h0PSIxIiBzdHlsZT0iZmlsbDojNzg3ODc4OyBzdHJva2Utd2lkdGg6MHB4OyIvPjwvc3ZnPg==");
+
+  /* Resizer pattern */
+  --mac-resizer-pattern: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+PGcgaWQ9Il83RUJ2dW8iPjxyZWN0IHg9IjQuNTUiIHk9IjkuMDkiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjkuMDkiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojYWJhYmFiOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjguMTgiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjguMTgiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjguMTgiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYuMzYiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjIuNzMiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEuODIiIHk9IjcuMjciIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojYWJhYmFiOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjcuMjciIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYuMzYiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjIuNzMiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEuODIiIHk9IjYuMzYiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjguMTgiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjcuMjciIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYuMzYiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjIuNzMiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEuODIiIHk9IjUuNDUiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9Ii45MSIgeT0iNS40NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiM3OTc5Nzk7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iMCIgeT0iNS40NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNhYmFiYWI7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iOS4wOSIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiM3OTc5Nzk7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iOC4xOCIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNjY2M7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iNy4yNyIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iNi4zNiIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNjY2M7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iNS40NSIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiM3OTc5Nzk7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iNC41NSIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNjY2M7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iMy42NCIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iMi43MyIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiNjY2M7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iMS44MiIgeT0iNC41NSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiM3OTc5Nzk7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iLjkxIiB5PSI0LjU1IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIwIiB5PSI0LjU1IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI5LjA5IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI4LjE4IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI3LjI3IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI2LjM2IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6Izc5Nzk3OTsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI1LjQ1IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSI0LjU1IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2ZmZjsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIzLjY0IiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIyLjczIiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6Izc5Nzk3OTsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIxLjgyIiB5PSIzLjY0IiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIuOTEiIHk9IjMuNjQiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjcuMjciIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYuMzYiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjIuNzMiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjEuODIiIHk9IjIuNzMiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjcuMjciIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYuMzYiIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojNzk3OTc5OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjMuNjQiIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojY2NjOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjIuNzMiIHk9IjEuODIiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9Ii45MSIgd2lkdGg9Ii45MSIgaGVpZ2h0PSIuOTEiIHN0eWxlPSJmaWxsOiM3OTc5Nzk7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHJlY3QgeD0iNC41NSIgeT0iLjkxIiB3aWR0aD0iLjkxIiBoZWlnaHQ9Ii45MSIgc3R5bGU9ImZpbGw6I2NjYzsgc3Ryb2tlLXdpZHRoOjBweDsiLz48cmVjdCB4PSIzLjY0IiB5PSIuOTEiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjUuNDUiIHk9IjAiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjQuNTUiIHk9IjAiIHdpZHRoPSIuOTEiIGhlaWdodD0iLjkxIiBzdHlsZT0iZmlsbDojZmZmOyBzdHJva2Utd2lkdGg6MHB4OyIvPjwvZz48L3N2Zz4=");
+
+  /* Corner dither for button */
+  --mac-corner-dither: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDciPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjciIHN0eWxlPSJmaWxsOiMyMzFmMjA7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSIzIDAgMiAwIDIgMSAxIDEgMSAyIDAgMiAwIDMgMCA0IDEgNCAxIDMgMiAzIDIgMiAzIDIgMyAxIDQgMSA0IDAgMyAwIiBzdHlsZT0iZmlsbDojMmUyZTJlOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI1IDAgNCAwIDQgMSAzIDEgMyAyIDIgMiAyIDMgMSAzIDEgNCAwIDQgMCA1IDAgNiAxIDYgMSA1IDIgNSAyIDQgMyA0IDMgMyA0IDMgNCAyIDUgMiA1IDEgNiAxIDYgMCA1IDAiIHN0eWxlPSJmaWxsOiM1YzVjNWM7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI2IDAgNiAxIDUgMSA1IDIgNCAyIDQgMyAzIDMgMyA0IDIgNCAyIDUgMSA1IDEgNiAwIDYgMCA3IDEgNyAyIDcgMiA2IDMgNiAzIDUgNCA1IDQgNCA1IDQgNSAzIDYgMyA2IDIgNyAyIDcgMSA3IDAgNiAwIiBzdHlsZT0iZmlsbDojODc4Nzg3OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxwb2x5Z29uIHBvaW50cz0iNiAyIDYgMyA1IDMgNSA0IDQgNCA0IDUgMyA1IDMgNiAyIDYgMiA3IDMgNyA0IDcgNCA2IDUgNiA1IDUgNiA1IDYgNCA3IDQgNyAzIDcgMiA2IDIiIHN0eWxlPSJmaWxsOiNiMWIxYjE7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI2IDQgNiA1IDUgNSA1IDYgNCA2IDQgNyA1IDcgNiA3IDYgNiA3IDYgNyA1IDcgNCA2IDQiIHN0eWxlPSJmaWxsOiNkOGQ4ZDc7IHN0cm9rZS13aWR0aDowcHg7Ii8+PC9zdmc+");
+
+  /* Zoom icon (inner rectangle for zoom button) */
+  --mac-zoom-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+PHJlY3QgeT0iNS41IiB3aWR0aD0iNi41IiBoZWlnaHQ9IjEiIGZpbGw9IiMyMzFmMjAiLz48cmVjdCB4PSI1LjUiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjYuNSIgZmlsbD0iIzIzMWYyMCIvPjwvc3ZnPg==");
+
+  /* Collapse icon (line for collapse button) */
+  --mac-collapse-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+PHJlY3QgeD0iMSIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iMSIgZmlsbD0iIzIzMWYyMCIvPjwvc3ZnPg==");
+}
+
+/* ============================================
+   WINDOW CONTAINERS - Mac OS 9 Platinum Frame
+   ============================================ */
+.mac-theme .folder_folder,
+.mac-theme .folder_folder-project,
+.mac-theme .folder_folder-mail,
+.mac-theme .folder_folder-open-project,
+.mac-theme .folder_folder-resumefile,
+.mac-theme .folder_folder-MineSweeper,
+.mac-theme .folder_folder-taskmanager,
+.mac-theme .folder_folder_run,
+.mac-theme .bio_folder,
+.mac-theme .bgsetting_folder,
+.mac-theme .error_container {
+  background-color: var(--mac-frame-color);
+  border: var(--mac-border-size) solid var(--mac-border-color);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    1px 1px 0 0 black;
+  outline: none;
+  padding: 3px;
+  overflow: auto;
+  resize: both;
+}
+
+/* ============================================
+   TITLE BARS - Mac OS 9 Striped Style
+   ============================================ */
+.mac-theme .folder_dragbar,
+.mac-theme .folder_dragbar-project,
+.mac-theme .folder_dragbar-mail,
+.mac-theme .folder_dragbar-resumefile,
+.mac-theme .folder_dragbar-MineSweeper,
+.mac-theme .folder_dragbar_bgsetting,
+.mac-theme .folder_dragbar_run,
+.mac-theme .error_container .bar_tap {
+  height: 22px !important;
+  padding: 0 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  column-gap: 0 !important;
+  background: #dddddd !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-bottom: 0 !important;
+}
+
+/* Stripe background using ::before */
+.mac-theme .folder_dragbar::before,
+.mac-theme .folder_dragbar-project::before,
+.mac-theme .folder_dragbar-mail::before,
+.mac-theme .folder_dragbar-resumefile::before,
+.mac-theme .folder_dragbar-MineSweeper::before,
+.mac-theme .folder_dragbar_bgsetting::before,
+.mac-theme .folder_dragbar_run::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 12px;
+  background-image: var(--mac-title-pattern);
+  background-repeat: repeat-x;
+  background-size: auto 12px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   TITLE BAR NAME SECTION
+   ============================================ */
+.mac-theme .folder_barname,
+.mac-theme .folder_barname-project,
+.mac-theme .folder_barname-mail,
+.mac-theme .folder_barname-resumefile,
+.mac-theme .folder_barname-MineSweeper,
+.mac-theme .bgsetting_barname,
+.mac-theme .folder_barname_run,
+.mac-theme .bio_barname {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  background-color: #dddddd !important;
+  padding: 0 6px;
+  position: relative;
+  height: 16px;
+  isolation: isolate;
+}
+
+.mac-theme .folder_barname img,
+.mac-theme .folder_barname-project img,
+.mac-theme .folder_barname-mail img,
+.mac-theme .folder_barname-resumefile img,
+.mac-theme .folder_barname-MineSweeper img,
+.mac-theme .bgsetting_barname img,
+.mac-theme .bio_barname img {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0;
+  margin: 0;
+}
+
+.mac-theme .folder_barname span,
+.mac-theme .folder_barname-project span,
+.mac-theme .folder_barname-mail span,
+.mac-theme .folder_barname-resumefile span,
+.mac-theme .folder_barname-MineSweeper span,
+.mac-theme .bgsetting_barname span,
+.mac-theme .folder_barname_run span,
+.mac-theme .bio_barname span,
+.mac-theme .error_container .bar_tap > p {
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  padding: 0 2px;
+  white-space: nowrap;
+  line-height: 10px;
+}
+
+/* ============================================
+   CONTROL BUTTONS - Mac OS 9 Style
+   ============================================ */
+.mac-theme .folder_barbtn,
+.mac-theme .folder_barbtn-project,
+.mac-theme .folder_barbtn-mail,
+.mac-theme .folder_barbtn-resumefile,
+.mac-theme .folder_barbtn-MineSweeper,
+.mac-theme .bgsetting_barbtn,
+.mac-theme .folder_barbtn_run,
+.mac-theme .bio_barbtn {
+  display: contents !important;
+}
+
+.mac-theme .error_container .bar_tap > div {
+  display: flex;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* ============================================
+   MAC OS 9 CONTROL BUTTONS - FROM CLASSICY
+   ============================================ */
+
+/* Icon patterns - exact copy from classicy assets.scss */
+:root {
+  /* Corner dither pattern dari classicy */
+  --mac-corner-dither: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDciPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjciIHN0eWxlPSJmaWxsOiMyMzFmMjA7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSIzIDAgMiAwIDIgMSAxIDEgMSAyIDAgMiAwIDMgMCA0IDEgNCAxIDMgMiAzIDIgMiAzIDIgMyAxIDQgMSA0IDAgMyAwIiBzdHlsZT0iZmlsbDojMmUyZTJlOyBzdHJva2Utd2lkdGg6MHB4OyIvPjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHN0eWxlPSJmaWxsOiNmZmY7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI1IDAgNCAwIDQgMSAzIDEgMyAyIDIgMiAyIDMgMSAzIDEgNCAwIDQgMCA1IDAgNiAxIDYgMSA1IDIgNSAyIDQgMyA0IDMgMyA0IDMgNCAyIDUgMiA1IDEgNiAxIDYgMCA1IDAiIHN0eWxlPSJmaWxsOiM1YzVjNWM7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI2IDAgNiAxIDUgMSA1IDIgNCAyIDQgMyAzIDMgMyA0IDIgNCAyIDUgMSA1IDEgNiAwIDYgMCA3IDEgNyAyIDcgMiA2IDMgNiAzIDUgNCA1IDQgNCA1IDQgNSAzIDYgMyA2IDIgNyAyIDcgMSA3IDAgNiAwIiBzdHlsZT0iZmlsbDojODc4Nzg3OyBzdHJva2Utd2lkdGg6MHB4OyIvPjxwb2x5Z29uIHBvaW50cz0iNiAyIDYgMyA1IDMgNSA0IDQgNCA0IDUgMyA1IDMgNiAyIDYgMiA3IDMgNyA0IDcgNCA2IDUgNiA1IDUgNiA1IDYgNCA3IDQgNyAzIDcgMiA2IDIiIHN0eWxlPSJmaWxsOiNiMWIxYjE7IHN0cm9rZS13aWR0aDowcHg7Ii8+PHBvbHlnb24gcG9pbnRzPSI2IDQgNiA1IDUgNSA1IDYgNCA2IDQgNyA1IDcgNiA3IDYgNiA3IDYgNyA1IDcgNCA2IDQiIHN0eWxlPSJmaWxsOiNkOGQ4ZDc7IHN0cm9rZS13aWR0aDowcHg7Ii8+PC9zdmc+");
+  /* Collapse icon from classicy: 2 horizontal lines at y=4 and y=6 */
+  --mac-collapse-icon: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI4LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMCAxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAgMTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHJlY3QgeT0iNiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiLz4KPHJlY3QgeT0iNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiLz4KPC9zdmc+Cg==");
+  /* Zoom icon: small rectangle outline di pojok kanan bawah */
+  --mac-zoom-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7'%3E%3Crect x='0.5' y='0.5' width='6' height='6' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Base style untuk SEMUA button (using wildcard selector) */
+.mac-theme [class*="_barbtn"] > div {
+  width: 13px !important;
+  height: 13px !important;
+  min-width: 13px !important;
+  min-height: 13px !important;
+  background: linear-gradient(135deg, #888888, #ffffff 80%) !important;
+  border: 1px solid #000000 !important;
+  box-shadow:
+    inset 1px 1px 0 0 #cccccc,
+    inset -1px -1px 0 0 #888888 !important;
+  cursor: default !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ::before untuk corner dither pattern (semua button) */
+.mac-theme [class*="_barbtn"] > div::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: var(--mac-corner-dither);
+  background-repeat: no-repeat;
+  background-size: cover;
+  mix-blend-mode: luminosity;
+  opacity: 0.25;
+}
+
+/* ============================================
+   BUTTON POSITIONING (Refactored - Icons via JS elements)
+   Urutan JSX: first-child=Minimize, nth-child(2)=Zoom, nth-child(3)=Close
+   ============================================ */
+
+/* MINIMIZE BUTTON (first-child) - KIRI */
+.mac-theme [class*="_barbtn"] > div:first-child {
+  left: 5px !important;
+  right: auto !important;
+}
+
+/* ZOOM BUTTON (nth-child 2) - KANAN TENGAH */
+.mac-theme [class*="_barbtn"] > div:nth-child(2) {
+  right: 24px !important;
+  left: auto !important;
+}
+
+/* CLOSE BUTTON (nth-child 3) - KANAN */
+.mac-theme [class*="_barbtn"] > div:nth-child(3) {
+  right: 5px !important;
+  left: auto !important;
+}
+
+/* ============================================
+   ICON ELEMENTS (Rendered by JS/React)
+   ============================================ */
+
+/* Base style for all icon elements inside buttons */
+.mac-theme [class*="_barbtn"] p,
+.mac-theme [class*="_barbtn"] [class*="dash"],
+.mac-theme [class*="_barbtn"] [class*="expand"] {
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 5 !important;
+  pointer-events: none !important; /* Allow clicks to pass through to parent button */
+}
+
+/* MINIMIZE ICON (.dash) - 2 horizontal lines */
+.mac-theme [class*="_barbtn"] [class*="dash"] {
+  width: 7px !important;
+  height: 1px !important;
+  background: #333 !important;
+  box-shadow: 0 2px 0 0 #333 !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+
+/* ZOOM ICON (.expand) - rectangle box */
+.mac-theme [class*="_barbtn"] [class*="expand"] {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid #333;
+  border-top: 2px solid #333;
+}
+
+/* CLOSE ICON (.x / p with ×) - X symbol */
+.mac-theme [class*="_barbtn"] .x,
+.mac-theme [class*="_barbtn"] [class*="x-"] {
+  font-size: 9px !important;
+  font-weight: bold !important;
+  line-height: 13px !important;
+  color: #333 !important;
+  font-family: Arial, sans-serif !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ============================================
+   BIO_BARBTN KHUSUS (hanya 2 button: Minimize & Close)
+   ============================================ */
+
+/* Bio folder stripe - mentok ke button kiri dan kanan */
+.mac-theme .bio_folder .folder_dragbar::before {
+  left: 20px;
+  right: 20px;
+}
+
+/* bio_barbtn: nth-child(2) = CLOSE (pindah ke kanan) */
+.mac-theme .bio_barbtn > div:nth-child(2) {
+  right: 5px !important;
+  left: auto !important;
+}
+
+/* Button active/pressed state */
+.mac-theme [class*="_barbtn"] > div:active {
+  box-shadow:
+    inset -1px -1px 0 0 #cccccc,
+    inset 1px 1px 0 0 #888888;
+  background: linear-gradient(135deg, #666666, #cccccc 80%);
+}
+
+/* Hide expand_2 element (secondary expand indicator) */
+.mac-theme [class*="_barbtn"] [class*="expand_2"] {
+  display: none;
+}
+
+/* ============================================
+   MENU BAR - Mac OS 9 Style (Hide)
+   ============================================ */
+.mac-theme .file_edit_container,
+.mac-theme .file_edit_container-project,
+.mac-theme .file_edit_container-mail,
+.mac-theme .file_edit_container-resumefile,
+.mac-theme .file_edit_container-MineSweeper {
+  display: none;
+}
+
+/* ============================================
+   CONTENT AREA - Mac OS 9 Style
+   ============================================ */
+.mac-theme .folder_content,
+.mac-theme .folder_content-mypc,
+.mac-theme .folder_content-project,
+.mac-theme .folder_content-mail,
+.mac-theme .folder_content-resumefile,
+.mac-theme .folder_content-MineSweeper,
+.mac-theme .openproject_content,
+.mac-theme .taskmanager_content {
+  border: 1px solid var(--mac-border-color);
+  box-shadow:
+    -1px -1px var(--mac-system-05),
+    1px 1px var(--mac-system-01);
+  background-color: var(--mac-document-color);
+  margin-top: 4px;
+}
+
+/* ============================================
+   BOTTOM STATUS BAR - Mac OS 9 Style
+   ============================================ */
+.mac-theme .btm_bar_container,
+.mac-theme .btm_bar_container-project,
+.mac-theme .btm_bar_container-MineSweeper {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.mac-theme .btm_bar_container .object_bar,
+.mac-theme .btm_bar_container .size_bar,
+.mac-theme .btm_bar_container-project .object_bar-project,
+.mac-theme .btm_bar_container-project .size_bar-project,
+.mac-theme .btm_bar_container-MineSweeper .object_bar-MineSweeper,
+.mac-theme .btm_bar_container-MineSweeper .size_bar-MineSweeper {
+  border: 1px solid var(--mac-system-05);
+  border-bottom-color: var(--mac-system-01);
+  border-right-color: var(--mac-system-01);
+  background: var(--mac-system-03);
+}
+
+.mac-theme .btm_bar_container p,
+.mac-theme .btm_bar_container-project p,
+.mac-theme .btm_bar_container-MineSweeper p {
+  font-size: 9px;
+  padding: 1px 4px;
+  margin: 0;
+}
+
+/* ============================================
+   DRIVE CONTROL (MyComputer) - Mac OS 9 Style
+   ============================================ */
+.mac-theme .drive_control {
+  background: var(--mac-system-03);
+  border: 1px solid var(--mac-system-07);
+  border-bottom-color: var(--mac-system-05);
+  box-shadow: inset 1px 1px var(--mac-system-01);
+  margin: 0 3px;
+  padding: 2px 4px;
+}
+
+.mac-theme .drive_control .drive_link {
+  border: 1px solid var(--mac-system-07);
+  box-shadow:
+    -1px -1px var(--mac-system-05),
+    1px 1px var(--mac-system-01);
+  outline: none;
+}
+
+.mac-theme .drive_link .folder_select_btn {
+  background: linear-gradient(135deg, var(--mac-system-05), var(--mac-system-01) 80%);
+  border: 1px solid black;
+  box-shadow:
+    inset 1px 1px 0 0 var(--mac-system-03),
+    inset -1px -1px 0 0 var(--mac-system-05);
+}
+
+.mac-theme .undo_btn {
+  background: linear-gradient(135deg, var(--mac-system-05), var(--mac-system-01) 80%);
+  border: 1px solid black;
+  box-shadow:
+    inset 1px 1px 0 0 var(--mac-system-03),
+    inset -1px -1px 0 0 var(--mac-system-05);
+  outline: none;
+}
+
+/* ============================================
+   TAB BUTTONS - Mac OS 9 Style
+   ============================================ */
+.mac-theme .file_tap_container-bio p,
+.mac-theme .file_tap_container-bgsetting p {
+  background: var(--mac-system-03);
+  border: 1px solid black;
+  box-shadow:
+    inset 1px 1px 0 0 var(--mac-system-01),
+    inset -1px -1px 0 0 var(--mac-system-05);
+  border-radius: 0;
+}
+
+/* ============================================
+   BUTTONS - Mac OS 9 Rounded Style
+   ============================================ */
+.mac-theme .bio_btn_container div,
+.mac-theme .bgsetting_btn_container div,
+.mac-theme .run_btn_container div,
+.mac-theme .taskmanager_btn_container button,
+.mac-theme .error_container .error_ok_btn,
+.mac-theme .btn_option_btm_container .download_icon {
+  background: var(--mac-system-02);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-04),
+    inset 1px 1px var(--mac-system-04),
+    inset 2px 2px var(--mac-system-01);
+}
+
+.mac-theme .bio_btn_container div:active,
+.mac-theme .bgsetting_btn_container div:active,
+.mac-theme .run_btn_container div:active,
+.mac-theme .taskmanager_btn_container button:active,
+.mac-theme .error_container .error_ok_btn:active,
+.mac-theme .btn_option_btm_container .download_icon:active {
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-06),
+    inset 1px 1px var(--mac-system-07),
+    inset 2px 2px var(--mac-system-06);
+  background: var(--mac-system-04);
+}
+
+/* ============================================
+   Mac OS 9 Style Scrollbars
+   ============================================ */
+.mac-theme .folder_content::-webkit-scrollbar,
+.mac-theme .folder_content-mypc::-webkit-scrollbar,
+.mac-theme .folder_content-project::-webkit-scrollbar,
+.mac-theme .folder_content-mail::-webkit-scrollbar,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar,
+.mac-theme .parent_item_container::-webkit-scrollbar,
+.mac-theme .openproject_content::-webkit-scrollbar,
+.mac-theme .taskmanager_content::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.mac-theme .folder_content::-webkit-scrollbar-track,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-track,
+.mac-theme .folder_content-project::-webkit-scrollbar-track,
+.mac-theme .folder_content-mail::-webkit-scrollbar-track,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-track,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-track,
+.mac-theme .parent_item_container::-webkit-scrollbar-track,
+.mac-theme .openproject_content::-webkit-scrollbar-track,
+.mac-theme .taskmanager_content::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border-left: 1px solid #888888;
+  border-top: 1px solid #888888;
+}
+
+.mac-theme .folder_content::-webkit-scrollbar-thumb,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-thumb,
+.mac-theme .folder_content-project::-webkit-scrollbar-thumb,
+.mac-theme .folder_content-mail::-webkit-scrollbar-thumb,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-thumb,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-thumb,
+.mac-theme .parent_item_container::-webkit-scrollbar-thumb,
+.mac-theme .openproject_content::-webkit-scrollbar-thumb,
+.mac-theme .taskmanager_content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
+  border: 1px solid #555555;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #888888;
+}
+
+.mac-theme .folder_content::-webkit-scrollbar-button,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-button,
+.mac-theme .folder_content-project::-webkit-scrollbar-button,
+.mac-theme .folder_content-mail::-webkit-scrollbar-button,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-button,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-button,
+.mac-theme .parent_item_container::-webkit-scrollbar-button,
+.mac-theme .openproject_content::-webkit-scrollbar-button,
+.mac-theme .taskmanager_content::-webkit-scrollbar-button {
+  background: var(--mac-system-03);
+  border: 1px solid black;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #888888;
+  height: 16px;
+  width: 16px;
+}
+
+/* Hide double buttons for specific content areas */
+.mac-theme .folder_content::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content::-webkit-scrollbar-button:end:decrement,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-button:end:decrement,
+.mac-theme .folder_content-project::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content-project::-webkit-scrollbar-button:end:decrement,
+.mac-theme .folder_content-mail::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content-mail::-webkit-scrollbar-button:end:decrement,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-button:end:decrement,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-button:start:increment,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-button:end:decrement,
+.mac-theme .parent_item_container::-webkit-scrollbar-button:start:increment,
+.mac-theme .parent_item_container::-webkit-scrollbar-button:end:decrement,
+.mac-theme .openproject_content::-webkit-scrollbar-button:start:increment,
+.mac-theme .openproject_content::-webkit-scrollbar-button:end:decrement,
+.mac-theme .taskmanager_content::-webkit-scrollbar-button:start:increment,
+.mac-theme .taskmanager_content::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+
+.mac-theme .folder_content::-webkit-scrollbar-corner,
+.mac-theme .folder_content-mypc::-webkit-scrollbar-corner,
+.mac-theme .folder_content-project::-webkit-scrollbar-corner,
+.mac-theme .folder_content-mail::-webkit-scrollbar-corner,
+.mac-theme .folder_content-resumefile::-webkit-scrollbar-corner,
+.mac-theme .folder_content-MineSweeper::-webkit-scrollbar-corner,
+.mac-theme .parent_item_container::-webkit-scrollbar-corner,
+.mac-theme .openproject_content::-webkit-scrollbar-corner,
+.mac-theme .taskmanager_content::-webkit-scrollbar-corner {
+  background: var(--mac-system-03);
+}
+
+/* ============================================
+   WINDOW RESIZER - Mac OS 9 Style
+   ============================================ */
+.mac-theme .folder_folder::after,
+.mac-theme .folder_folder-project::after,
+.mac-theme .folder_folder-mail::after,
+.mac-theme .folder_folder-open-project::after,
+.mac-theme .folder_folder-resumefile::after,
+.mac-theme .bio_folder::after,
+.mac-theme .bgsetting_folder::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 15px;
+  height: 15px;
+  cursor: nwse-resize;
+  border-top: 1px solid var(--mac-system-07);
+  border-left: 1px solid var(--mac-system-07);
+  background-color: var(--mac-system-03);
+  background-image: var(--mac-resizer-pattern);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ============================================
+   POPUP/DROPDOWN - Mac OS 9 Style
+   ============================================ */
+.mac-theme .popup_select_folder .selected_icon,
+.mac-theme .run_dropdown_box {
+  border: 1px solid black;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.mac-theme .popup_select_folder .selected_icon li:hover,
+.mac-theme .run_dropdown_box p:hover {
+  background: #3366cc;
+  color: white;
+}
+
+/* ============================================
+   Address Bar (OpenProject) - Mac OS 9 Style
+   ============================================ */
+.mac-theme .address_container {
+  background: var(--mac-system-03);
+  border: 1px solid var(--mac-system-05);
+  box-shadow: inset 1px 1px var(--mac-system-01);
+}
+
+.mac-theme .address_box {
+  border: 1px solid var(--mac-system-07);
+  box-shadow:
+    inset -1px -1px var(--mac-system-01),
+    inset 1px 1px var(--mac-system-05);
+}
+
+/* ============================================
+   SHUTDOWN DIALOG - Mac OS 9 Style
+   ============================================ */
+.mac-theme .shutdown_container {
+  background-color: var(--mac-frame-color);
+  border: var(--mac-border-size) solid var(--mac-border-color);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    1px 1px 0 0 black;
+  outline: none;
+  padding: 3px;
+}
+
+.mac-theme .nav_shutdown {
+  height: 22px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mac-frame-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.mac-theme .nav_shutdown::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 12px;
+  background-image: var(--mac-title-pattern);
+  background-repeat: repeat-x;
+  background-size: auto 12px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mac-theme .nav_shutdown > p {
+  color: black;
+  font-weight: bold;
+  font-size: 10px;
+  z-index: 1;
+  background: var(--mac-frame-color);
+  padding: 0 6px;
+  position: relative;
+  height: 12px;
+  line-height: 12px;
+}
+
+.mac-theme .nav_shutdown .x_shutdown_container {
+  width: 19px;
+  height: 15px;
+  min-width: 19px;
+  min-height: 15px;
+  background: var(--mac-system-03);
+  border: 1px solid black;
+  box-shadow:
+    inset -1px -1px 0 0 var(--mac-system-05),
+    inset -2px -2px 0 0 var(--mac-system-04),
+    inset 1px 1px 0 0 var(--mac-system-01),
+    inset 2px 2px 0 0 var(--mac-system-02),
+    1px 1px 0 0 var(--mac-system-05);
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.mac-theme .nav_shutdown .x_shutdown_container:active {
+  box-shadow:
+    inset -1px -1px 0 0 var(--mac-system-01),
+    inset 1px 1px 0 0 var(--mac-system-05);
+  background: var(--mac-system-04);
+}
+
+.mac-theme .nav_shutdown .x_shutdown_container p {
+  display: none;
+}
+
+.mac-theme .shutdown_btn_container div {
+  background: var(--mac-system-02);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-04),
+    inset 1px 1px var(--mac-system-04),
+    inset 2px 2px var(--mac-system-01);
+}
+
+.mac-theme .shutdown_btn_container div:active {
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-06),
+    inset 1px 1px var(--mac-system-07),
+    inset 2px 2px var(--mac-system-06);
+  background: var(--mac-system-04);
+}
+
+/* ============================================
+   RIGHT CLICK CONTEXT MENU - Mac OS 9 Style
+   ============================================ */
+.mac-theme .window_rightclick_container {
+  background-color: var(--mac-frame-color);
+  border: var(--mac-border-size) solid var(--mac-border-color);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.mac-theme .window_rightclick_container p:hover {
+  background: #3366cc;
+  color: white;
+}
+
+.mac-theme .window_rightclick_container h5 {
+  border-bottom: 1px solid var(--mac-system-05);
+}
+
+.mac-theme .sort_expand {
+  background-color: var(--mac-frame-color);
+  border: var(--mac-border-size) solid var(--mac-border-color);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   POPUP CREATE DIALOG - Mac OS 9 Style
+   ============================================ */
+.mac-theme .pop_up_create {
+  background-color: var(--mac-frame-color);
+  border: var(--mac-border-size) solid var(--mac-border-color);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.mac-theme .ok_cancel_btn button {
+  background: var(--mac-system-02);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-04),
+    inset 1px 1px var(--mac-system-04),
+    inset 2px 2px var(--mac-system-01);
+}
+
+.mac-theme .ok_cancel_btn button:active {
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-06),
+    inset 1px 1px var(--mac-system-07),
+    inset 2px 2px var(--mac-system-06);
+  background: var(--mac-system-04);
+}
+
+/* Notification - Keep Windows 95 Style */
+
+/* ============================================
+   PATCH NOTES CONTENT - Mac OS 9 Style
+   ============================================ */
+.mac-theme .content_container {
+  border: 1px solid var(--mac-border-color);
+  box-shadow:
+    -1px -1px var(--mac-system-05),
+    1px 1px var(--mac-system-01);
+  background-color: var(--mac-document-color);
+}
+
+/* ============================================
+   FORM INPUTS - Mac OS 9 Style
+   ============================================ */
+.mac-theme input[type="text"],
+.mac-theme input[type="password"],
+.mac-theme input[type="email"],
+.mac-theme input[type="number"],
+.mac-theme input[type="url"],
+.mac-theme input[type="search"],
+.mac-theme textarea {
+  font-family: "Charcoal", "Chicago", sans-serif;
+  padding: 4px 6px;
+  border: 1px solid black;
+  border-radius: 0;
+  box-shadow:
+    -1px -1px 0 0 var(--mac-system-05),
+    1px 1px 0 0 var(--mac-system-04);
+  background-color: white;
+  outline: none;
+}
+
+.mac-theme input[type="text"]:focus,
+.mac-theme input[type="password"]:focus,
+.mac-theme input[type="email"]:focus,
+.mac-theme input[type="number"]:focus,
+.mac-theme input[type="url"]:focus,
+.mac-theme input[type="search"]:focus,
+.mac-theme textarea:focus {
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 2px #6699ff,
+    0 0 2px 2px #6699ff;
+}
+
+/* ============================================
+   BUTTONS - Mac OS 9 Platinum Style
+   ============================================ */
+.mac-theme button,
+.mac-theme input[type="button"],
+.mac-theme input[type="submit"],
+.mac-theme input[type="reset"] {
+  font-family: "Charcoal", "Chicago", sans-serif;
+  font-size: 10px;
+  padding: 4px 12px;
+  cursor: default;
+  background-color: var(--mac-system-02);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-04),
+    inset 1px 1px var(--mac-system-04),
+    inset 2px 2px var(--mac-system-01);
+}
+
+.mac-theme button:active,
+.mac-theme input[type="button"]:active,
+.mac-theme input[type="submit"]:active,
+.mac-theme input[type="reset"]:active {
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-06),
+    inset 1px 1px var(--mac-system-07),
+    inset 2px 2px var(--mac-system-06);
+  background-color: var(--mac-system-05);
+  color: white;
+}
+
+.mac-theme button:disabled,
+.mac-theme input[type="button"]:disabled,
+.mac-theme input[type="submit"]:disabled,
+.mac-theme input[type="reset"]:disabled {
+  box-shadow: none;
+  background-color: var(--mac-system-03);
+  border-color: var(--mac-system-05);
+  color: var(--mac-system-05);
+}
+
+/* Default button with black outline */
+.mac-theme button.default,
+.mac-theme input[type="submit"] {
+  box-shadow:
+    0 0 0 1px var(--mac-system-04),
+    0 0 0 2px var(--mac-system-02),
+    0 0 0 3px black,
+    inset -1px -1px 0 0 var(--mac-system-05),
+    inset 1px 1px 0 0 var(--mac-system-06);
+}
+
+/* ============================================
+   RADIO INPUTS - Mac OS 9 Style
+   ============================================ */
+.mac-theme input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  margin: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--mac-system-07);
+  border-radius: 50%;
+  background: radial-gradient(at left top, var(--mac-system-02), var(--mac-system-01) 40%, var(--mac-system-05) 100%);
+  box-shadow: 0 0 2px var(--mac-system-07);
+  cursor: default;
+}
+
+.mac-theme input[type="radio"]:checked {
+  background: radial-gradient(
+    at left top,
+    var(--mac-system-07) 10%,
+    var(--mac-system-05) 20%,
+    var(--mac-system-02) 85%,
+    var(--mac-system-01) 100%
+  );
+}
+
+.mac-theme input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 3px;
+  border-radius: 50%;
+  background: black;
+}
+
+.mac-theme input[type="radio"]:disabled {
+  border-color: var(--mac-system-05);
+  background: var(--mac-system-02);
+}
+
+/* ============================================
+   CHECKBOXES - Mac OS 9 Style
+   ============================================ */
+.mac-theme input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid black;
+  border-radius: 0;
+  background-color: var(--mac-system-03);
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-01),
+    1px 1px 0 0 black;
+  cursor: default;
+}
+
+.mac-theme input[type="checkbox"]:checked::after {
+  content: "\00D7";
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 10px;
+  font-weight: bold;
+  text-shadow: var(--mac-system-05) 1px 1px 2px;
+}
+
+.mac-theme input[type="checkbox"]:active {
+  background: var(--mac-system-06);
+  box-shadow: none;
+}
+
+.mac-theme input[type="checkbox"]:disabled {
+  border-color: var(--mac-system-06);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ============================================
+   SELECT/DROPDOWN - Mac OS 9 Style
+   ============================================ */
+.mac-theme select {
+  font-family: "Charcoal", "Chicago", sans-serif;
+  font-size: 10px;
+  padding: 4px 24px 4px 8px;
+  cursor: default;
+  background-color: var(--mac-system-02);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow:
+    inset -1px -1px var(--mac-system-05),
+    inset -2px -2px var(--mac-system-04),
+    inset 1px 1px var(--mac-system-04),
+    inset 2px 2px var(--mac-system-01);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0nYScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjUgMzAnPjxwb2x5Z29uIHBvaW50cz0nMTIuNSAxNy4yMSAyNSAxNy4yMSAxOC43NSAyMy42IDEyLjUgMzAgNi4yNSAyMy42IDAgMTcuMjEgMTIuNSAxNy4yMScgc3Ryb2tlLXdpZHRoPScwJy8+PHBvbHlnb24gcG9pbnRzPScxMi41IDEyLjc5IDAgMTIuNzkgNi4yNSA2LjQgMTIuNSAwIDE4Ljc1IDYuNCAyNSAxMi43OSAxMi41IDEyLjc5JyBzdHJva2Utd2lkdGg9JzAnLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 10px;
+}
+
+.mac-theme select:focus {
+  border-radius: 4px;
+  outline: none;
+  box-shadow:
+    0 0 0 2px #6699ff,
+    inset -1px -1px var(--mac-system-05),
+    inset 1px 1px var(--mac-system-06);
+}
+
+.mac-theme select:disabled {
+  background-color: var(--mac-system-01);
+  background-image: linear-gradient(to top, var(--mac-system-02), var(--mac-system-01) 33%);
+  cursor: not-allowed;
+}
+
+.mac-theme select option {
+  font-family: "Charcoal", "Chicago", sans-serif;
+  padding: 4px;
+}
+
+/* ============================================
+   RANGE SLIDER - Mac OS 9 Style
+   ============================================ */
+.mac-theme input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  background: transparent;
+}
+
+.mac-theme input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--mac-system-03);
+  border: 1px solid var(--mac-system-07);
+  border-radius: 0;
+  box-shadow:
+    inset -1px -1px var(--mac-system-01),
+    inset 1px 1px var(--mac-system-05);
+}
+
+.mac-theme input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 16px;
+  margin-top: -7px;
+  background: linear-gradient(135deg, var(--mac-system-05), var(--mac-system-01) 80%);
+  border: 1px solid black;
+  border-radius: 0;
+  box-shadow:
+    inset 1px 1px 0 0 var(--mac-system-03),
+    inset -1px -1px 0 0 var(--mac-system-05);
+  cursor: default;
+}
+
+/* ============================================
+   PROGRESS BAR - Mac OS 9 Style
+   ============================================ */
+.mac-theme progress {
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: var(--mac-system-02);
+  box-shadow:
+    inset -1px -1px var(--mac-system-01),
+    inset 1px 1px var(--mac-system-05);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.mac-theme progress::-webkit-progress-bar {
+  background: var(--mac-system-02);
+}
+
+.mac-theme progress::-webkit-progress-value {
+  background: linear-gradient(to bottom, #6699ff 0%, #3366cc 50%, #3366cc 50%, #6699ff 100%);
+}
+
+/* ============================================
+   SCROLLBARS - Mac OS 9 Style (Global)
+   ============================================ */
+.mac-theme ::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.mac-theme ::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border-left: 1px solid #888888;
+  border-top: 1px solid #888888;
+}
+
+.mac-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
+  border: 1px solid #555555;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #888888;
+}
+
+.mac-theme ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #dddddd 50%, #aaaaaa 100%);
+}
+
+.mac-theme ::-webkit-scrollbar-button {
+  background: var(--mac-system-03);
+  border: 1px solid black;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #888888;
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+/* Hide double buttons - only show single button at each end */
+.mac-theme ::-webkit-scrollbar-button:start:increment,
+.mac-theme ::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+
+/* Up arrow button */
+.mac-theme ::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolygon points='8,4 13,11 3,11' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+/* Down arrow button */
+.mac-theme ::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolygon points='8,12 13,5 3,5' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+/* Left arrow button */
+.mac-theme ::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolygon points='4,8 11,3 11,13' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+/* Right arrow button */
+.mac-theme ::-webkit-scrollbar-button:horizontal:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolygon points='12,8 5,3 5,13' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+.mac-theme ::-webkit-scrollbar-corner {
+  background: var(--mac-system-03);
+}
+
+/* ============================================
+   LINK STYLES - Mac OS 9 Style
+   ============================================ */
+.mac-theme a {
+  color: #0000cc;
+  text-decoration: underline;
+}
+
+.mac-theme a:visited {
+  color: #660099;
+}
+
+.mac-theme a:hover {
+  color: #3366ff;
+}
+
+.mac-theme a:active {
+  color: #ff0000;
+}
+
+/* ============================================
+   FOCUS OUTLINE - Mac OS 9 Style
+   ============================================ */
+.mac-theme *:focus {
+  outline: none;
+}
+
+.mac-theme *:focus-visible {
+  outline: 2px solid #6699ff;
+  outline-offset: 1px;
+}
+
+/* ============================================
+   SELECTION - Mac OS 9 Style
+   ============================================ */
+.mac-theme ::selection {
+  background: #3366cc;
+  color: white;
+}
+
+.mac-theme ::-moz-selection {
+  background: #3366cc;
+  color: white;
+}
+
+/* ============================================
+   TOOLTIPS - Mac OS 9 Style
+   ============================================ */
+.mac-theme [title]:hover::after {
+  font-family: "Charcoal", "Chicago", sans-serif;
+  font-size: 9px;
+  background: #ffffcc;
+  border: 1px solid black;
+  padding: 2px 4px;
+}
+
+/* ============================================
+   TASKBAR/FOOTER - Keep Windows 95 Style
+   ============================================ */
+/* All taskbar-related styles (footer, start menu, icon size popup,
+   calendar, clippy, notification) use Windows 95 style */
+
+/* ============================================
+   BIO FOLDER - Fixed Dialog (No Resize)
+   ============================================ */
+.mac-theme .bio_folder {
+  overflow: hidden;
+  resize: none;
+}
+
+.mac-theme .bio_folder::after {
+  display: none;
+}
+
+/* ============================================
+   START MENU SUBMENU - Fix overflow for top menu bar
+   ============================================ */
+.mac-theme .sub_start_container {
+  max-height: calc(100svh - 60px);
+  overflow-y: auto;
+}
+
+.mac-theme .sub_start_container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.mac-theme .sub_start_container::-webkit-scrollbar-track {
+  background: var(--mac-scrollbar-track);
+  border-left: 1px solid var(--mac-border-dark);
+}
+
+.mac-theme .sub_start_container::-webkit-scrollbar-thumb {
+  background: var(--mac-scrollbar-thumb);
+  border: 1px solid var(--mac-border-dark);
+  border-top-color: var(--mac-border-light);
+  border-left-color: var(--mac-border-light);
+}
+
+.mac-theme .sub_start_container::-webkit-scrollbar-button {
+  display: block;
+  height: 12px;
+  background: var(--mac-scrollbar-thumb);
+  border: 1px solid var(--mac-border-dark);
+  border-top-color: var(--mac-border-light);
+  border-left-color: var(--mac-border-light);
+}
+
+/* ============================================
+   WINDOW DRAGGING STATE - Mac OS 9 Style
+   Dotted border outline with transparent content
+   Uses react-draggable's built-in class
+   ============================================ */
+.mac-theme .folder_folder.react-draggable-dragging,
+.mac-theme .folder_folder-project.react-draggable-dragging,
+.mac-theme .folder_folder-mail.react-draggable-dragging,
+.mac-theme .folder_folder-open-project.react-draggable-dragging,
+.mac-theme .folder_folder-resumefile.react-draggable-dragging,
+.mac-theme .folder_folder-MineSweeper.react-draggable-dragging,
+.mac-theme .folder_folder-taskmanager.react-draggable-dragging,
+.mac-theme .folder_folder_run.react-draggable-dragging,
+.mac-theme .bio_folder.react-draggable-dragging,
+.mac-theme .bgsetting_folder.react-draggable-dragging,
+.mac-theme .error_container.react-draggable-dragging {
+  cursor: grabbing !important;
+  border: 2px dotted black !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.mac-theme .folder_folder.react-draggable-dragging *,
+.mac-theme .folder_folder-project.react-draggable-dragging *,
+.mac-theme .folder_folder-mail.react-draggable-dragging *,
+.mac-theme .folder_folder-open-project.react-draggable-dragging *,
+.mac-theme .folder_folder-resumefile.react-draggable-dragging *,
+.mac-theme .folder_folder-MineSweeper.react-draggable-dragging *,
+.mac-theme .folder_folder-taskmanager.react-draggable-dragging *,
+.mac-theme .folder_folder_run.react-draggable-dragging *,
+.mac-theme .bio_folder.react-draggable-dragging *,
+.mac-theme .bgsetting_folder.react-draggable-dragging *,
+.mac-theme .error_container.react-draggable-dragging * {
+  opacity: 0 !important;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Hide scrollbars during drag */
+.mac-theme .folder_folder.react-draggable-dragging,
+.mac-theme .folder_folder-project.react-draggable-dragging,
+.mac-theme .folder_folder-mail.react-draggable-dragging,
+.mac-theme .folder_folder-open-project.react-draggable-dragging,
+.mac-theme .folder_folder-resumefile.react-draggable-dragging,
+.mac-theme .folder_folder-MineSweeper.react-draggable-dragging,
+.mac-theme .folder_folder-taskmanager.react-draggable-dragging,
+.mac-theme .folder_folder_run.react-draggable-dragging,
+.mac-theme .bio_folder.react-draggable-dragging,
+.mac-theme .bgsetting_folder.react-draggable-dragging,
+.mac-theme .error_container.react-draggable-dragging {
+  overflow: hidden !important;
+}
+
+.mac-theme .folder_folder.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-project.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-mail.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-open-project.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-resumefile.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-MineSweeper.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder-taskmanager.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .folder_folder_run.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .bio_folder.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .bgsetting_folder.react-draggable-dragging ::-webkit-scrollbar,
+.mac-theme .error_container.react-draggable-dragging ::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Ensure cursor is grab on title bar when not dragging */
+.mac-theme .folder_dragbar,
+.mac-theme .folder_dragbar-project,
+.mac-theme .folder_dragbar-mail,
+.mac-theme .folder_dragbar-resumefile,
+.mac-theme .folder_dragbar-MineSweeper,
+.mac-theme .folder_dragbar_bgsetting,
+.mac-theme .folder_dragbar_run {
+  cursor: grab;
+}
+
+.mac-theme .folder_dragbar:active,
+.mac-theme .folder_dragbar-project:active,
+.mac-theme .folder_dragbar-mail:active,
+.mac-theme .folder_dragbar-resumefile:active,
+.mac-theme .folder_dragbar-MineSweeper:active,
+.mac-theme .folder_dragbar_bgsetting:active,
+.mac-theme .folder_dragbar_run:active {
+  cursor: grabbing;
+}
